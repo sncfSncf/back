@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="51e14ecb-184a-46a6-b47f-a7dee62451b1" name="sncf-ihm Mapping">
+      <data-sources db="acc984cd-7966-41a4-889d-8a284cee61ff" ddl="9bd4d062-c080-45d2-96c3-2eed123f5c08" />
+      <scope>
+        <node kind="database" negative="1" />
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="9bd4d062-c080-45d2-96c3-2eed123f5c08" />
+          <option name="name" value="sncf-ihm (DDL)" />
+          <option name="dbmsName" value="MYSQL" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

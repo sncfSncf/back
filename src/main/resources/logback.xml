@@ -1,0 +1,16 @@
+<configuration>
+    <appender name="RollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>application-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- Nombre de fichiers de journalisation à conserver -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%t] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="RollingFileAppender" />
+    </root>
+</configuration>
