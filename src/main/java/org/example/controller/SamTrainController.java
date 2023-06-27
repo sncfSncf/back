@@ -2533,7 +2533,7 @@ foundTrain =true;
                 int count50592ok = Trains50592ok.size();
                 int count50592nok = Trains50592nok.size();
 
-                DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
 
                 double pourcentagesamok = ((double) countsamok / (numTrains.size())) * 100;
 
@@ -2565,7 +2565,7 @@ foundTrain =true;
                     trainMapSam.put("nombre de train passé (sam ok)", numTrains.size());
                     trainMapSam.put("mr(sam ok)", typemr);
                     trainMapSam.put("nombre de train passé avec sam ok", countsamok);
-                    String pourcentageFormatted = decimalFormat.format(pourcentagesamok);
+                    Double pourcentageFormatted = Math.round(pourcentagesamok * 100.0) / 100.0;
                     trainMapSam.put("pourcentage de chaque type mr sam ok", pourcentageFormatted);
 
 
@@ -2583,9 +2583,8 @@ foundTrain =true;
 
                     // Calcul du pourcentage
                     double pourentagesam = ((double) countbe / (numTrains.size())) * 100;
-                    String pourcentageFormatted = decimalFormat.format(pourentagesam);
-                    Double p = Double.parseDouble(pourcentageFormatted);// Formate le pourcentage avec deux chiffres après la virgule
-                    percentagesamnokMap.put(String.valueOf(index), p);
+                    Double pourcentageFormatted = Math.round(pourentagesam * 100.0) / 100.0;
+                    percentagesamnokMap.put(String.valueOf(index), pourcentageFormatted);
                 }
 
 
@@ -2596,8 +2595,7 @@ foundTrain =true;
                     trainMapSam.put("mr(sam nok)", typemr);
                     trainMapSam.put("nombre de train passé sam nok", countsamnok);
                     trainMapSam.put("index occultation et le total de fois de perturbation dans tous les trains", samnokIndexValueMap);
-                    String pourcentageFormatted = decimalFormat.format(percentagesamnokMap);
-                    trainMapSam.put("pourcentage de perturbation par index d'un type mr", pourcentageFormatted);
+                    trainMapSam.put("pourcentage de perturbation par index d'un type mr", percentagesamnokMap);
 
 
                 }
@@ -2608,11 +2606,11 @@ foundTrain =true;
                     trainMap50592.put("nombre de train passé(50592 nok)", numTrains.size());
                     trainMap50592.put("mr(50592 nok)", typemr);
                     trainMap50592.put("nombre de train passé 50592 nok", count50592nok);
-                    Map<String, String> formattedPercentageMap = new HashMap<>();
+                    Map<String, Double> formattedPercentageMap = new HashMap<>();
                     for (Map.Entry<String, Double> entry : percentageMap.entrySet()) {
                         String entete = entry.getKey();
                         Double pourcentage = entry.getValue();
-                        String pourcentageFormatted = decimalFormat.format(pourcentage);
+                        Double pourcentageFormatted = Math.round(pourcentage * 100.0) / 100.0;
                         formattedPercentageMap.put(entete, pourcentageFormatted);
                     }
                     trainMap50592.put("le pourcentage de chaque capteur", formattedPercentageMap);
@@ -2626,7 +2624,7 @@ foundTrain =true;
                     trainMap50592.put("nombre de train passé(50592 ok )", numTrains.size());
                     trainMap50592.put("mr (50592 ok)", typemr);
                     trainMap50592.put("nombre de train passé 50592 ok", count50592ok);
-                    String pourcentageFormatted = decimalFormat.format(percentageok);
+                    Double pourcentageFormatted = Math.round(percentageok * 100.0) / 100.0;
                     trainMap50592.put("le poucentage de chaque type mr (50592 ok)", pourcentageFormatted);
 
                 }
@@ -2840,17 +2838,18 @@ foundTrain =true;
             Map<String, Object> trainMapSam = new HashMap<>();
             Map<String, Object> trainMap50592 = new HashMap<>();
 
-            DecimalFormat decimalFormat = new DecimalFormat("0.00"); // Définit le format avec deux chiffres après la virgule
+
 
             int countsamok = Trainssamok.size();
             int count50592ok = Trains50592ok.size();
 
 
             double pourcentagesamok = ((double) countsamok / (samuniquement.size())) * 100;
-            String pourcentageFormattedsam = decimalFormat.format(pourcentagesamok); // Formate le pourcentage avec deux chiffres après la virgule
+            double pourcentageFormattedsam = Math.round(pourcentagesamok * 100.0) / 100.0;
 
                 double percentageok = ((double) count50592ok / (m50592s1.size())) * 100;
-            String pourcentageFormatted50592 = decimalFormat.format(percentageok); // Formate le pourcentage avec deux chiffres après la virgule
+            double pourcentageFormatted50592 = Math.round(percentageok * 100.0) / 100.0;
+
 
             // Affichage des en-têtes rouges et leur nombre de fois 50592 nok
                 Map<String, Double> percentageMap = new HashMap<>();
@@ -2863,8 +2862,8 @@ foundTrain =true;
                     if (!Trains50592nok.isEmpty()) {
                         // Calcul du pourcentage
                         double percentagenok = ((double) countbe / (m50592s1.size())) * 100;
-
-                        percentageMap.put(entete, percentagenok);
+                        double formattedPercentageMap = Math.round(percentagenok * 100.0) / 100.0;
+                        percentageMap.put(entete, formattedPercentageMap);
                     }
 
                 }
@@ -2875,7 +2874,7 @@ foundTrain =true;
 
                 trainMapSam.put("nombre de train passé (sam ok)", samuniquement.size());
                 trainMapSam.put("nombre de train passé avec sam ok", countsamok);
-                trainMapSam.put("pourcentage de chaque type mr sam ok", pourcentageFormattedsam);
+                trainMapSam.put("pourcentage des sam ok", pourcentageFormattedsam);
 
 
             }
@@ -2892,9 +2891,9 @@ foundTrain =true;
 
                 // Calcul du pourcentage
                 double pourentagesam = ((double) countbe / (samuniquement.size())) * 100;
-                String pourcentageFormattedsamnok = decimalFormat.format(pourentagesam); // Formate le pourcentage avec deux chiffres après la virgule
-                Double p = Double.parseDouble(pourcentageFormattedsamnok);// Formate le pourcentage avec deux chiffres après la virgule
-                percentagesamnokMap.put(String.valueOf(index), p);
+                double pourcentageFormatted = Math.round(pourentagesam * 100.0) / 100.0;
+                percentagesamnokMap.put(String.valueOf(index), pourcentageFormatted);
+
             }
 
 
@@ -2904,7 +2903,7 @@ foundTrain =true;
                 trainMapSam.put("nombre de train passé (sam nok)", samuniquement.size());
                 trainMapSam.put("nombre de train passé sam nok", sams.size());
                 trainMapSam.put("index occultation et le total de fois de perturbation dans tous les trains", samnokIndexValueMap);
-                trainMapSam.put("pourcentage de perturbation par index d'un type mr", percentagesamnokMap);
+                trainMapSam.put("pourcentage de perturbation par EV",percentagesamnokMap );
 
 
             }
@@ -2914,15 +2913,7 @@ foundTrain =true;
                 if (!Trains50592nok.isEmpty()) {
                     trainMap50592.put("nombre de train passé (50592 nok)", m50592s1.size());
                     trainMap50592.put("nombre de train passé 50592 nok", m50592s.size());
-
-                    Map<String, String> formattedPercentageMap = new HashMap<>();
-                    for (Map.Entry<String, Double> entry : percentageMap.entrySet()) {
-                        String entete = entry.getKey();
-                        Double pourcentage = entry.getValue();
-                        String pourcentageFormatted = decimalFormat.format(pourcentage);
-                        formattedPercentageMap.put(entete, pourcentageFormatted);
-                    }
-                    trainMap50592.put("le pourcentage de chaque capteur", formattedPercentageMap);
+                    trainMap50592.put("le pourcentage de chaque capteur", percentageMap);
                     trainMap50592.put("nom du capteur et le nombre de perturbations", m505952nokIndexValueMap);
 
 
@@ -2932,7 +2923,7 @@ foundTrain =true;
                 if (!Trains50592ok.isEmpty()) {
                     trainMap50592.put("nombre de train passé (50592 ok )", m50592s1.size());
                     trainMap50592.put("nombre de train passé 50592 ok", count50592ok);
-                    trainMap50592.put("le poucentage de chaque type mr (50592 ok)", pourcentageFormatted50592);
+                    trainMap50592.put("le poucentage des 50592 (50592 ok)", pourcentageFormatted50592);
 
                 }
             if (!trainMapSam.isEmpty()) {
@@ -2949,18 +2940,11 @@ foundTrain =true;
 
 
 
-
-
-        DecimalFormat decimalFormat = new DecimalFormat("0.00"); // Définit le format avec deux chiffres après la virgule
-
-
         double sommePourcentage50592Ok = 0.0;
         int trains50592Ok = 0;
         int trains50592 = 0;
         Map<String, Integer> indexcapteurCountMap = new HashMap<>();
         int total50592nOk = 0;
-        Map<String, Integer> indexcapteurokCountMap = new HashMap<>();
-        int total50592Ok = 0;
         Map<String, Object> totalPourcentageMap50592nok = new HashMap<>();
         Map<String, Object> totalPourcentageMap50592ok = new HashMap<>();
         Map<String, Object> totalPourcentageMapSamnok = new HashMap<>();
@@ -2997,7 +2981,7 @@ foundTrain =true;
         }
         }
         sommePourcentage50592Ok = ((double) trains50592Ok / trains50592) * 100;
-        String pourcentageFormatted50592ok = decimalFormat.format(sommePourcentage50592Ok); // Formate le pourcentage avec deux chiffres après la virgule
+        double pourcentageFormatted50592ok = Math.round(sommePourcentage50592Ok * 100.0) / 100.0;
         if (!Double.isNaN(sommePourcentage50592Ok)) {
             totalPourcentageMapSamok.put("le pourcentage de tous les 50592 ok et de tous les types mr", pourcentageFormatted50592ok);
         }
@@ -3007,13 +2991,13 @@ foundTrain =true;
 
         Map<String, Object> totalPourcentage50592nok = new HashMap<>();
         double percentage50592 = 0.0;
-        String pourcentageFormatted50592nok ="";
+        double pourcentageFormatted50592nok ;
 // Calculate and display the percentages for each index of occultation
         for (Map.Entry<String, Integer> entry : indexcapteurCountMap.entrySet()) {
             String indexOccultation = entry.getKey();
             int totalFoisPerturbation = entry.getValue();
             percentage50592 = ((double) totalFoisPerturbation / total50592nOk) * 100;
-            pourcentageFormatted50592nok = decimalFormat.format(percentage50592); // Formate le pourcentage avec deux chiffres après la virgule
+             pourcentageFormatted50592nok = Math.round(percentage50592 * 100.0) / 100.0;
             totalPourcentage50592nok.put(indexOccultation, pourcentageFormatted50592nok);
 
         }
@@ -3050,7 +3034,7 @@ if(!indexcapteurCountMap.isEmpty()){
             }
 
             sommePourcentageSamOk = ((double) trainsSamOk / trainsSam) * 100;
-        String pourcentageFormattedSamok = decimalFormat.format(sommePourcentageSamOk); // Formate le pourcentage avec deux chiffres après la virgule
+        Double pourcentageFormattedSamok = Math.round(sommePourcentageSamOk * 100.0) / 100.0;
         if (!Double.isNaN(sommePourcentageSamOk)) {
             totalPourcentageMapSamok.put("le pourcentage de tous les sam ok et de tous les types mr", pourcentageFormattedSamok);
         }
@@ -3081,7 +3065,7 @@ if(indexOccultationMap != null){
 
             Map<String, Object> totalPourcentageSamnok = new HashMap<>();
             double percentage = 0.0;
-        String pourcentageFormattedSamnok ="";
+
 // Calculate and display the percentages for each index of occultation
             for (Map.Entry<String, Integer> entry : indexOccultationCountMap.entrySet()) {
                 String indexOccultation = entry.getKey();
@@ -3089,11 +3073,18 @@ if(indexOccultationMap != null){
                 percentage = ((double) totalFoisPerturbation / totalSamnOk) * 100;
 
                 totalPourcentageSamnok.put(indexOccultation, percentage);
-                 pourcentageFormattedSamnok = decimalFormat.format(totalPourcentageSamnok); // Formate le pourcentage avec deux chiffres après la virgule
+
             }
 if(!indexOccultationCountMap.isEmpty()){
     totalPourcentageMapSamnok.put("total d'index", indexOccultationCountMap);
-    totalPourcentageMapSamnok.put("pourcentage des EV dans tous les types mr", pourcentageFormattedSamnok);
+    Map<String, Double> formattedPercentageMap = new HashMap<>();
+    for (Map.Entry<String, Object> entry : totalPourcentageSamnok.entrySet()) {
+        String entete = entry.getKey();
+        Double pourcentage = (Double) entry.getValue();
+        Double pourcentageFormatted = Math.round(pourcentage * 100.0) / 100.0;
+        formattedPercentageMap.put(entete, pourcentageFormatted);
+    }
+    totalPourcentageMapSamnok.put("pourcentage des EV dans tous les types mr", formattedPercentageMap);
 
 }
 
