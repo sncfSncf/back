@@ -2320,6 +2320,7 @@ foundTrain =true;
         List<Map<String, Object>> result = new ArrayList<>();
 
         if(typemrList != null && !typemrList.isEmpty() ) {
+            Collections.sort(typemrList);
             for (String typemr : typemrList) {
                 foundmr = true;
                 List<Mr> mrs = mrRepository.findByMr(typemr);
