@@ -132,9 +132,10 @@ public class Main {
     }
 
 
-
+    boolean isIntelliJ = (System.getenv("IDEA_INITIAL_DIRECTORY") != null);
 
     private static void moveFileToFailureDirectory(File file, File failureDirectory) {
+        boolean isIntelliJ = (System.getenv("IDEA_INITIAL_DIRECTORY") != null);
         // Vérifiez si le répertoire d'échec existe, sinon créez-le
         if (!failureDirectory.exists()) {
             failureDirectory.mkdirs();
@@ -148,90 +149,111 @@ public class Main {
 
         // Déplacez le fichier vers le répertoire d'échec
         if (file.renameTo(newFile)) {
-            System.out.println("Fichier déplacé avec succès vers le répertoire d'échec : " + newFile.getAbsolutePath());
+            String logMessagee = "Fichier déplacé avec succès vers le répertoire d'échec : " + newFile.getAbsolutePath();
+
+            if (isIntelliJ) {
+                System.out.println(logMessagee);  // Affiche dans la console (syso) d'IntelliJ
+            } else {
+                logger.info(logMessagee);  // Affiche dans le logger du serveur
+            }
+
         } else {
-            System.out.println("Échec du déplacement du fichier vers le répertoire d'échec : " + file.getAbsolutePath());
+            String logMessagee = "Échec du déplacement du fichier vers le répertoire d'échec : " + file.getAbsolutePath();
+
+            if (isIntelliJ) {
+                System.out.println(logMessagee);  // Affiche dans la console (syso) d'IntelliJ
+            } else {
+                logger.info(logMessagee);  // Affiche dans le logger du serveur
+            }
+
         }
     }
 
 
 
-    private void deplacerFichiers(File[] files, File outputFolder) throws InterruptedException {
+    private void deplacerFichier(File file, File outputFolder) throws InterruptedException {
+        if (file.getName().toLowerCase().endsWith(".json")) {
+            File targetFile = new File(outputFolder, file.getName());
 
+            if (targetFile.exists()) {
+                String logMessage = "Le fichier cible existe déjà : " + targetFile.getAbsolutePath();
 
-
-        for (File file : files) {
-            if (file.getName().toLowerCase().endsWith(".json")) {
-                File targetFile = new File(outputFolder, file.getName());
-
-                if (targetFile.exists()) {
-
-                    logger.info("Le fichier cible existe déjà : " + targetFile.getAbsolutePath());
-
+                if (isIntelliJ) {
+                    System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
                 } else {
-// Le fichier n'est pas ouvert en mode écriture, on peut le déplacer
+                    logger.info(logMessage);  // Affiche dans le logger du serveur
+                }
+            } else {
+                // Le fichier n'est pas ouvert en mode écriture, on peut le déplacer
+                try {
+                    Thread.sleep(1000);
+                    Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    String logMessage = "Le fichier a été déplacé avec succès : " + file.getName();
 
-                    try {
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                    } else {
+                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                    }
+                } catch (FileSystemException ex) {
+                    String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
 
-                        Thread.sleep(1000);
-
-                        Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-                        logger.info("Le fichier a été déplacé avec succès oui !" + file.getName());
-
-                    } catch (FileSystemException ex) {
-
-                        logger.info("Erreur lors du déplacement du fichier : " + ex.getMessage());
-
-
-// Tenter de déplacer le fichier à nouveau après une pause
-
-                        int maxAttempts = 3; // Nombre maximal de tentatives de déplacement
-
-                        int attempt = 0;
-
-
-                        while (attempt < maxAttempts) {
-
-                            attempt++;
-
-                            try {
-
-                                Thread.sleep(1000); // Pause de quelques millisecondes avant la prochaine tentative
-
-                                Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-                                logger.info("Le fichier a été déplacé avec succès ok !" + file.getName());
-
-                                break; // Sortir de la boucle si le déplacement réussit
-
-                            } catch (IOException | InterruptedException exx) {
-
-                                logger.info("Erreur lors du déplacement du fichier (tentative " + attempt + " sur " + maxAttempts + ") : " + exx.getMessage());
-
-                            }
-
-                        }
-
-
-                        if (attempt == maxAttempts) {
-
-                            logger.info("Impossible de déplacer le fichier après " + maxAttempts + " tentatives.");
-
-                        }
-
-                    } catch (IOException ex) {
-
-                        logger.info("Erreur lors du déplacement du fichier : " + ex.getMessage());
-
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                    } else {
+                        logger.info(logMessage);  // Affiche dans le logger du serveur
                     }
 
+                    // Tenter de déplacer le fichier à nouveau après une pause
+                    int maxAttempts = 3; // Nombre maximal de tentatives de déplacement
+                    int attempt = 0;
 
+                    while (attempt < maxAttempts) {
+                        attempt++;
+
+                        try {
+                            Thread.sleep(1000); // Pause de quelques millisecondes avant la prochaine tentative
+                            Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                            String logMessag = "Le fichier a été déplacé avec succès après une nouvelle tentative : " + file.getName();
+
+                            if (isIntelliJ) {
+                                System.out.println(logMessag);  // Affiche dans la console (syso) d'IntelliJ
+                            } else {
+                                logger.info(logMessag);  // Affiche dans le logger du serveur
+                            }
+
+                            break; // Sortir de la boucle si le déplacement réussit
+                        } catch (IOException | InterruptedException exx) {
+                            String logMessa = "Erreur lors du déplacement du fichier (tentative " + attempt + " sur " + maxAttempts + ") : " + exx.getMessage();
+
+                            if (isIntelliJ) {
+                                System.out.println(logMessa);  // Affiche dans la console (syso) d'IntelliJ
+                            } else {
+                                logger.info(logMessa);  // Affiche dans le logger du serveur
+                            }
+                        }
+                    }
+
+                    if (attempt == maxAttempts) {
+                        String logMessagee = "Impossible de déplacer le fichier après " + maxAttempts + " tentatives.";
+
+                        if (isIntelliJ) {
+                            System.out.println(logMessagee);  // Affiche dans la console (syso) d'IntelliJ
+                        } else {
+                            logger.info(logMessagee);  // Affiche dans le logger du serveur
+                        }
+                    }
+                } catch (IOException ex) {
+                    String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
+
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                    } else {
+                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                    }
                 }
-
             }
         }
-
     }
 
 
@@ -500,7 +522,30 @@ public class Main {
 
                                     }
                                 }
+                                deplacerFichier(excelFile, outputFolder);
                             }
+
+
+
+
+
+                            filesToMove.clear(); // Vider la liste filesToMove
+
+
+
+
+
+
+
+
+
+                            inputFolderPathh.register(watchService,
+
+                                    StandardWatchEventKinds.ENTRY_CREATE,
+
+                                    StandardWatchEventKinds.ENTRY_MODIFY,
+
+                                    StandardWatchEventKinds.ENTRY_DELETE);
 
                         }
 
@@ -519,6 +564,7 @@ public class Main {
                         if (samFiless != null ) {
 
                             for (File samFile : samFiless) {
+
                                 File targetFile = new File(outputFolder, samFile.getName());
 
                                 if (targetFile.exists()) {
@@ -566,7 +612,8 @@ public class Main {
 // Déclarer une variable pour suivre l'incrémentation de NbOccultations
                                     int counter = 0;
                                     for (Sam sam : samss) {
-
+                                        logger.info("le fichier à traiter "+sam.getFileName());
+                                        System.out.println("le fichier à traiter "+sam.getFileName());
 
                                         sam.checkOccultations();
 
@@ -648,6 +695,15 @@ public class Main {
 
                                         samService.save(sam);
 
+                                        if (samService.findById(sam.getId()) != null) {
+                                            logger.info("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
+                                            System.out.println("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
+                                            deplacerFichier(samFile, outputFolder);
+                                        } else {
+                                            logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
+                                            System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
+                                        }
+
 
                                         Set<String> existingResultIdss = new HashSet<>();
                                         DateTimeFormatter formatterrs = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
@@ -659,14 +715,6 @@ public class Main {
 
 
 
-
-                                        String logMessagetrain = "L'url passé est " + url+" pour se fichier est "+samFile.getName();
-
-                                        if (isIntelliJ) {
-                                            System.out.println(logMessagetrain);  // Affiche dans la console (syso) d'IntelliJ
-                                        } else {
-                                            logger.info(logMessagetrain);  // Affiche dans le logger du serveur
-                                        }
 
 
                                         URL jsonUrl;
@@ -725,13 +773,7 @@ public class Main {
 
                                                 while ((line = bufferedReader.readLine()) != null) {
                                                     response.append(line);
-                                                    String logMessageok = "La réponse de cet URL " + url + " est " + response;
 
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                                    }
                                                 }
 
                                                 bufferedReader.close();
@@ -868,6 +910,8 @@ public class Main {
 
                                         }
 
+
+
                                     }
 
 
@@ -894,7 +938,10 @@ public class Main {
 
                                 }
                             }
+
                             }
+
+
 
                         }
 
@@ -955,6 +1002,8 @@ public class Main {
 
 
                                         for (M_50592 m_50592 : m_50592s) {
+                                            logger.info("le fichier à traiter "+m_50592.getFileName());
+                                            System.out.println("le fichier à traiter "+m_50592.getFileName());
 
                                             m_50592.setFileName(m50592File.getName()); // Définir le nom de fichier dans l'objet M_50592
 
@@ -1075,6 +1124,14 @@ public class Main {
                                             m_50592.setUrl50592(url50592);
 
                                             m50592Service.save(m_50592);
+                                            if (m50592Service.findById(m_50592.getId()) != null) {
+                                                logger.info("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
+                                                System.out.println("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
+                                                deplacerFichier(m50592File, outputFolder);
+                                            } else {
+                                                logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
+                                                System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
+                                            }
 
 
                                             //train
@@ -1086,13 +1143,7 @@ public class Main {
                                             String url = "https://test01.rd-vision-dev.com/get_images?system=2&dateFrom=" +
                                                     m50592DateTime.minusMinutes(1) + "&dateTo=" + m50592DateTime.plusMinutes(1);
 
-                                            String logMessageok = "L'url passé est " + url+" pour se fichier est "+m50592File.getName();
 
-                                            if (isIntelliJ) {
-                                                System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                            } else {
-                                                logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                            }
 
 
                                             URL jsonUrl;
@@ -1152,13 +1203,7 @@ public class Main {
 
                                                     while ((line = bufferedReader.readLine()) != null) {
                                                         response.append(line);
-                                                        String logMessage = "La réponse de cet URL " + url + " est " + response;
 
-                                                        if (isIntelliJ) {
-                                                            System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
-                                                        } else {
-                                                            logger.info(logMessage);  // Affiche dans le logger du serveur
-                                                        }
                                                     }
 
                                                     bufferedReader.close();
@@ -1292,6 +1337,7 @@ public class Main {
                                             }
 
 
+
                                         }
 
 
@@ -1325,6 +1371,8 @@ public class Main {
 
 
                             }
+
+
 
                         }
 
@@ -1413,10 +1461,17 @@ public class Main {
                                 }
                             }
 
+
+
+
+
+
                         }
 
 
-                        deplacerFichiers(filesToMove.toArray(new File[0]), outputFolder);
+
+
+
 
 
 
@@ -1437,11 +1492,6 @@ public class Main {
                                 StandardWatchEventKinds.ENTRY_MODIFY,
 
                                 StandardWatchEventKinds.ENTRY_DELETE);
-
-
-
-
-
 
 
 
@@ -1606,6 +1656,10 @@ public class Main {
 
                             }
                         }
+
+                        // Déplacer les fichiers existants dans le répertoire "input"
+
+                        deplacerFichier(excelFile, outputFolder);
                     }
 
                 }
@@ -1674,7 +1728,8 @@ public class Main {
                                 int counter = 0;
                                 for (Sam sam : samss) {
 
-
+                                    logger.info("le fichier à traiter "+sam.getFileName());
+                                    System.out.println("le fichier à traiter "+sam.getFileName());
                                     sam.checkOccultations();
 
                                     sam.setFileName(samFile.getName()); // Définir le nom de fichier dans l'objet M_50592
@@ -1755,6 +1810,14 @@ public class Main {
 
                                     samService.save(sam);
 
+                                    if (samService.findById(sam.getId()) != null) {
+                                        logger.info("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
+                                        System.out.println("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
+                                        deplacerFichier(samFile, outputFolder);
+                                    } else {
+                                        logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
+                                        System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
+                                    }
 
                                     Set<String> existingResultIdss = new HashSet<>();
                                     DateTimeFormatter formatterrs = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
@@ -1764,13 +1827,7 @@ public class Main {
                                     String url = "https://test01.rd-vision-dev.com/get_images?system=2&dateFrom=" +
                                             samDateTime.minusMinutes(1) + "&dateTo=" + samDateTime.plusMinutes(1);
 
-                                    String logMessageok = "L'url passé est " + url+" pour se fichier est "+samFile.getName();
 
-                                    if (isIntelliJ) {
-                                        System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                    } else {
-                                        logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                    }
 
 
                                     URL jsonUrl;
@@ -1830,13 +1887,7 @@ public class Main {
 
                                                 response.append(line);
 
-                                                String logMessage = "La réponse de cet URL " + url + " est " + response;
 
-                                                if (System.console() != null) {
-                                                    System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMessage);  // Affiche dans le logger du serveur
-                                                }
 
                                             }
 
@@ -2062,6 +2113,8 @@ public class Main {
 
 
                                 for (M_50592 m_50592 : m_50592s) {
+                                    logger.info("le fichier à traiter "+m_50592.getFileName());
+                                    System.out.println("le fichier à traiter "+m_50592.getFileName());
 
                                     m_50592.setFileName(m50592File.getName()); // Définir le nom de fichier dans l'objet M_50592
 
@@ -2183,7 +2236,14 @@ public class Main {
 
                                     m50592Service.save(m_50592);
 
-
+                                    if (m50592Service.findById(m_50592.getId()) != null) {
+                                        logger.info("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
+                                        System.out.println("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
+                                        deplacerFichier(m50592File, outputFolder);
+                                    } else {
+                                        logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
+                                        System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
+                                    }
                                     //train
 
                                     Set<String> existingResultIdss = new HashSet<>();
@@ -2194,13 +2254,7 @@ public class Main {
                                             m50592DateTime.minusMinutes(1) + "&dateTo=" + m50592DateTime.plusMinutes(1);
 
 
-                                    String logMessageok = "L'url passé est " + url+" pour se fichier est "+m50592File.getName();
 
-                                    if (isIntelliJ) {
-                                        System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                    } else {
-                                        logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                    }
 
                                     URL jsonUrl;
 
@@ -2257,13 +2311,7 @@ public class Main {
 
                                             while ((line = bufferedReader.readLine()) != null) {
                                                 response.append(line);
-                                                String logMessage = "La réponse de cet URL " + url + " est " + response;
 
-                                                if (System.console() != null) {
-                                                    System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMessage);  // Affiche dans le logger du serveur
-                                                }
                                             }
 
                                             bufferedReader.close();
@@ -2515,9 +2563,7 @@ public class Main {
                 }
 
 
-// Déplacer les fichiers existants dans le répertoire "input"
 
-                deplacerFichiers(existingFiles, outputFolder);
 
 
 

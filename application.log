@@ -1627,3 +1627,507 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-06-29 16:10:32,316 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 16:10:32,390 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 16:10:32,418 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 16:38:15,745 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 26872 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 16:38:15,753 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 16:38:15,761 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 16:38:15,917 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 16:38:15,917 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 16:38:18,311 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 16:38:18,610 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 261 ms. Found 6 JPA repository interfaces.
+2023-06-29 16:38:21,302 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 16:38:21,339 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 16:38:21,341 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 16:38:21,342 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 16:38:21,672 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 16:38:21,673 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5753 ms
+2023-06-29 16:38:21,764 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 16:38:22,626 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 16:38:22,656 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 16:38:22,950 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 16:38:23,093 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 16:38:23,590 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 16:38:23,924 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 16:38:27,680 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 16:38:27,695 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 16:38:29,099 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 16:38:30,363 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 16:38:30,443 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 16:38:30,516 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 16:38:30,543 [restartedMain] INFO  org.example.Main - Started Main in 16.233 seconds (JVM running for 18.522)
+2023-06-29 16:38:30,558 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 16:39:43,604 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_02h34m33s.json
+2023-06-29 16:39:46,246 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_02h55m19s.json
+2023-06-29 16:39:47,253 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_03h45m15s.json
+2023-06-29 16:39:48,264 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_03h56m30s.json
+2023-06-29 16:43:06,016 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_11h44m18s.json
+2023-06-29 16:43:07,419 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_11h33m53s.json
+2023-06-29 16:44:58,449 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 16:44:58,456 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 16:44:58,472 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:00:59,004 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:00:59,017 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 6596 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:00:59,018 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:00:59,118 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:00:59,118 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:01:00,398 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:01:00,514 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:01:01,739 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:01:01,757 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:01:01,757 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:01:01,758 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:01:01,924 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:01:01,924 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2803 ms
+2023-06-29 17:01:01,979 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:01:02,460 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:01:02,471 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:01:02,696 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:01:02,845 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:01:03,131 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:01:03,281 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:01:05,851 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:01:05,873 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:01:07,111 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:01:07,953 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:01:07,984 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:01:08,040 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:01:08,063 [restartedMain] INFO  org.example.Main - Started Main in 9.651 seconds (JVM running for 11.224)
+2023-06-29 17:01:08,074 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:03:39,826 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_13h46m22s.json
+2023-06-29 17:03:44,785 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_13h30m19s.json
+2023-06-29 17:03:45,799 [Thread-7] INFO  org.example.Main - Le fichier a été déplacé avec succès oui !SAM005-Chevilly_2023.06.29_13h34m43s.json
+2023-06-29 17:14:58,245 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:14:58,253 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:14:58,278 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:15:11,760 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:15:11,781 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 8980 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:15:11,784 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:15:11,909 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:15:11,909 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:15:13,889 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:15:14,080 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:15:16,367 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:15:16,400 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:15:16,401 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:15:16,402 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:15:16,667 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:15:16,667 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4756 ms
+2023-06-29 17:15:16,749 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:15:17,244 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:15:17,254 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:15:17,526 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:15:17,685 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:15:17,980 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:15:18,228 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:15:20,888 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:15:20,896 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:15:22,035 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:15:22,866 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:15:22,891 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:15:22,934 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:15:22,954 [restartedMain] INFO  org.example.Main - Started Main in 12.703 seconds (JVM running for 14.507)
+2023-06-29 17:15:22,966 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:26:18,986 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:26:18,994 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:26:19,013 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:26:31,558 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:26:31,575 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 27396 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:26:31,578 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:26:31,723 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:26:31,723 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:26:34,598 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:26:34,733 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:26:37,001 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:26:37,022 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:26:37,023 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:26:37,023 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:26:37,267 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:26:37,268 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5543 ms
+2023-06-29 17:26:37,352 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:26:37,918 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:26:37,933 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:26:38,326 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:26:38,442 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:26:38,826 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:26:39,071 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:26:41,787 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:26:41,797 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:26:42,882 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:26:43,737 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:26:43,779 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:26:43,855 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:26:43,879 [restartedMain] INFO  org.example.Main - Started Main in 13.087 seconds (JVM running for 14.635)
+2023-06-29 17:26:43,891 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:27:58,673 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.29_15h33m50s.json
+2023-06-29 17:27:58,797 [Thread-7] INFO  org.example.Main - le fichier est mis dans la bdd SAM005-Chevilly_2023.06.29_15h33m50s.json
+2023-06-29 17:35:33,646 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.29_00h13m26s.json
+2023-06-29 17:35:33,678 [Thread-7] INFO  org.example.Main - le fichier est mis dans la bdd SAM005-Chevilly_2023.06.29_00h13m26s.json
+2023-06-29 17:43:02,046 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:43:02,059 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:43:02,096 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:43:17,521 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:43:17,542 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 6708 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:43:17,545 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:43:17,679 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:43:17,679 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:43:19,968 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:43:20,143 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 150 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:43:22,333 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:43:22,361 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:43:22,362 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:43:22,362 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:43:22,735 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:43:22,735 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5054 ms
+2023-06-29 17:43:22,830 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:43:23,488 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:43:23,511 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:43:23,874 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:43:24,056 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:43:24,416 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:43:24,791 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:43:28,688 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:43:28,703 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:43:30,504 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:43:32,801 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:43:32,843 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:43:32,902 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:43:32,947 [restartedMain] INFO  org.example.Main - Started Main in 16.319 seconds (JVM running for 18.266)
+2023-06-29 17:43:32,971 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:43:39,379 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.29_00h13m26s.json
+2023-06-29 17:43:39,510 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.29_00h13m26s.json
+2023-06-29 17:48:05,432 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:48:05,442 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:48:05,466 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:48:19,911 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:48:19,922 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 21644 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:48:19,924 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:48:20,063 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:48:20,063 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:48:21,808 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:48:21,954 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:48:24,221 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:48:24,272 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:48:24,275 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:48:24,277 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:48:25,853 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:48:25,853 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5786 ms
+2023-06-29 17:48:26,118 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:48:26,926 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:48:26,941 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:48:27,229 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:48:27,332 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:48:27,558 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:48:27,739 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:48:29,996 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:48:30,005 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:48:31,033 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:48:31,876 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:48:31,894 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:48:31,939 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:48:31,958 [restartedMain] INFO  org.example.Main - Started Main in 12.792 seconds (JVM running for 14.2)
+2023-06-29 17:48:31,969 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:50:30,592 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:50:30,600 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:50:30,628 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 17:50:37,111 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 17:50:37,137 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 9944 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 17:50:37,139 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 17:50:37,277 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 17:50:37,278 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 17:50:39,496 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 17:50:39,666 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 145 ms. Found 6 JPA repository interfaces.
+2023-06-29 17:50:41,568 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 17:50:41,614 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:50:41,615 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 17:50:41,616 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 17:50:41,945 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 17:50:41,946 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4652 ms
+2023-06-29 17:50:42,085 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 17:50:42,907 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 17:50:42,934 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 17:50:43,347 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 17:50:43,520 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 17:50:43,977 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 17:50:44,338 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 17:50:47,940 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 17:50:47,953 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:50:49,515 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 17:50:50,957 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 17:50:50,992 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 17:50:51,085 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 17:50:51,123 [restartedMain] INFO  org.example.Main - Started Main in 14.83 seconds (JVM running for 16.644)
+2023-06-29 17:50:51,180 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 17:51:11,556 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.29_03h56m30s.json
+2023-06-29 17:51:11,717 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.29_03h45m15s.json
+2023-06-29 17:51:12,310 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.29_03h56m30s.json
+2023-06-29 17:51:12,351 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.29_03h56m30s.json
+2023-06-29 17:52:26,018 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 17:52:26,024 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 17:52:26,037 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:01:33,857 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:01:33,875 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 6004 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:01:33,877 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:01:34,024 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:01:34,024 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:01:36,614 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:01:36,808 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 166 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:01:39,086 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:01:39,115 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:01:39,116 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:01:39,117 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:01:39,477 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:01:39,478 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5451 ms
+2023-06-29 18:01:39,574 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:01:40,247 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:01:40,266 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:01:40,678 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:01:40,992 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:01:41,537 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:01:41,854 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:01:45,532 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:01:45,549 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:01:47,730 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:01:49,588 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:01:49,618 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:01:49,678 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:01:49,702 [restartedMain] INFO  org.example.Main - Started Main in 17.153 seconds (JVM running for 18.868)
+2023-06-29 18:01:49,721 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:01:58,735 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_20h27m16s.json
+2023-06-29 18:01:58,889 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_20h12m15s.json
+2023-06-29 18:01:59,493 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_20h27m16s.json
+2023-06-29 18:01:59,531 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_20h27m16s.json
+2023-06-29 18:06:54,867 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:06:54,882 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:06:54,917 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:07:08,638 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:07:08,658 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 25884 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:07:08,661 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:07:08,824 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:07:08,825 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:07:10,838 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:07:10,981 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 120 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:07:12,736 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:07:12,767 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:07:12,768 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:07:12,769 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:07:13,058 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:07:13,059 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4230 ms
+2023-06-29 18:07:13,146 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:07:13,603 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:07:13,622 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:07:14,151 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:07:14,265 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:07:14,646 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:07:15,002 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:07:18,881 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:07:18,896 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:07:20,926 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:07:22,209 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:07:22,247 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:07:22,306 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:07:22,332 [restartedMain] INFO  org.example.Main - Started Main in 14.459 seconds (JVM running for 15.96)
+2023-06-29 18:07:22,349 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:07:46,940 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_23h55m11s.json
+2023-06-29 18:07:47,053 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_23h44m52s.json
+2023-06-29 18:07:47,605 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_23h55m11s.json
+2023-06-29 18:07:47,636 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_23h55m11s.json
+2023-06-29 18:10:46,465 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:10:46,478 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:10:46,515 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:11:02,280 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:11:02,295 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 26316 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:11:02,297 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:11:02,448 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:11:02,448 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:11:04,304 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:11:04,446 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 119 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:11:06,817 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:11:06,860 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:11:06,861 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:11:06,862 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:11:07,209 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:11:07,209 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4757 ms
+2023-06-29 18:11:07,325 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:11:08,207 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:11:08,232 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:11:08,722 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:11:08,918 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:11:09,475 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:11:09,767 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:11:14,531 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:11:14,570 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:11:16,598 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:11:18,295 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:11:18,324 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:11:18,393 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:11:18,417 [restartedMain] INFO  org.example.Main - Started Main in 17.071 seconds (JVM running for 19.104)
+2023-06-29 18:11:22,127 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:12:01,953 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_23h37m33s.json
+2023-06-29 18:12:02,113 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_23h37m33s.json
+2023-06-29 18:12:41,365 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_22h53m32s.json
+2023-06-29 18:12:41,398 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_21h58m17s.json
+2023-06-29 18:12:41,713 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_22h53m32s.json
+2023-06-29 18:12:41,747 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_22h04m42s.json
+2023-06-29 18:12:42,028 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_22h53m32s.json
+2023-06-29 18:12:42,070 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_22h53m32s.json
+2023-06-29 18:15:05,269 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:15:05,282 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:15:05,312 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:15:18,226 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:15:18,246 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 5356 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:15:18,249 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:15:18,473 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:15:18,473 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:15:20,353 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:15:20,489 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:15:22,995 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:15:23,024 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:15:23,024 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:15:23,025 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:15:23,276 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:15:23,277 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4802 ms
+2023-06-29 18:15:23,374 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:15:23,953 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:15:23,982 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:15:24,767 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:15:24,958 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:15:25,603 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:15:25,962 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:15:30,157 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:15:30,167 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:15:31,861 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:15:33,057 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:15:33,087 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:15:33,138 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:15:33,159 [restartedMain] INFO  org.example.Main - Started Main in 15.8 seconds (JVM running for 17.284)
+2023-06-29 18:15:33,174 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:15:40,476 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_17h49m00s.json
+2023-06-29 18:15:40,628 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_17h14m28s.json
+2023-06-29 18:15:41,290 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_17h49m00s.json
+2023-06-29 18:15:41,335 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_17h19m49s.json
+2023-06-29 18:15:41,614 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_17h49m00s.json
+2023-06-29 18:15:41,641 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_17h49m00s.json
+2023-06-29 18:17:28,873 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:17:28,881 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:17:28,908 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:17:42,374 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:17:42,399 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 28512 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:17:42,403 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:17:42,580 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:17:42,581 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:17:44,599 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:17:44,746 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 126 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:17:47,173 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:17:47,209 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:17:47,211 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:17:47,212 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:17:47,578 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:17:47,578 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4994 ms
+2023-06-29 18:17:47,742 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:17:48,732 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:17:48,756 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:17:50,228 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:17:50,515 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:17:51,138 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:17:51,370 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:17:54,922 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:17:54,933 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:17:56,345 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:17:57,694 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:17:57,725 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:17:57,771 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:17:57,797 [restartedMain] INFO  org.example.Main - Started Main in 16.316 seconds (JVM running for 18.145)
+2023-06-29 18:17:57,812 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:18:05,930 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_20h34m37s.json
+2023-06-29 18:18:06,228 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_20h12m15s.json
+2023-06-29 18:18:07,346 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_20h34m37s.json
+2023-06-29 18:18:07,411 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_20h27m16s.json
+2023-06-29 18:18:07,741 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_20h34m37s.json
+2023-06-29 18:18:07,768 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_20h34m37s.json
+2023-06-29 18:29:13,457 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:29:13,478 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:29:13,502 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:29:33,082 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:29:33,101 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 17496 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:29:33,103 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:29:33,288 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:29:33,288 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:29:35,462 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:29:35,674 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 190 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:29:37,868 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:29:37,901 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:29:37,901 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:29:37,901 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:29:38,234 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:29:38,234 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4946 ms
+2023-06-29 18:29:38,323 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:29:39,588 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:29:39,628 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:29:40,110 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:29:40,327 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:29:41,107 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:29:41,639 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:29:47,267 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:29:47,296 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:29:49,917 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:29:51,480 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:29:51,560 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:29:51,654 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:29:51,715 [restartedMain] INFO  org.example.Main - Started Main in 19.605 seconds (JVM running for 21.345)
+2023-06-29 18:29:51,736 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:29:52,410 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h29m43s.json
+2023-06-29 18:29:52,555 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h16m38s.json
+2023-06-29 18:29:54,203 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:29:54,240 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h29m43s.json
+2023-06-29 18:29:55,555 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:29:55,584 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h40m11s.json
+2023-06-29 18:29:56,890 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:29:56,928 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:40:08,818 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:40:08,823 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:40:08,838 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-29 18:40:25,808 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-29 18:40:25,824 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on LAPTOP-J8JO732I with PID 28224 (C:\Users\ilham\Documents\sncfihm\back\target\classes started by ilham in C:\Users\ilham\Documents\sncfihm\back)
+2023-06-29 18:40:25,827 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-29 18:40:25,968 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 18:40:25,969 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 18:40:27,851 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 18:40:28,041 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 166 ms. Found 6 JPA repository interfaces.
+2023-06-29 18:40:29,899 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-29 18:40:29,924 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:40:29,925 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-29 18:40:29,926 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-29 18:40:30,211 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-29 18:40:30,211 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4240 ms
+2023-06-29 18:40:30,295 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-29 18:40:30,806 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-29 18:40:30,819 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-29 18:40:31,122 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 18:40:31,633 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-29 18:40:32,310 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 18:40:32,780 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-29 18:40:38,181 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 18:40:38,208 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:40:41,459 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 18:40:43,185 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-29 18:40:43,228 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-29 18:40:43,317 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 18:40:43,353 [restartedMain] INFO  org.example.Main - Started Main in 18.442 seconds (JVM running for 20.095)
+2023-06-29 18:40:43,374 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-29 18:42:19,436 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:42:19,679 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h29m43s.json
+2023-06-29 18:42:22,017 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:42:22,068 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h40m11s.json
+2023-06-29 18:42:23,674 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:42:23,714 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.06.28_19h50m43s.json
+2023-06-29 18:43:56,966 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.05.24_08h41m41s_Résultats-1xTint.json
+2023-06-29 18:43:57,697 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.05.24_08h27m00s_Résultats-1xTint.json
+2023-06-29 18:43:59,028 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.05.24_08h41m41s_Résultats-1xTint.json
+2023-06-29 18:43:59,495 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.05.24_08h33m27s_Résultats-1xTint.json
+2023-06-29 18:44:00,780 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.05.24_08h41m41s_Résultats-1xTint.json
+2023-06-29 18:44:01,413 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.05.24_08h41m41s_Résultats-1xTint.json
+2023-06-29 18:44:14,368 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 18:44:14,378 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-29 18:44:14,394 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.

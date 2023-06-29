@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.model.M_50592;
+import org.example.model.Sam;
 import org.example.repository.M_50592Repository;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,10 @@ public class M_50592Service {
 
     public List<M_50592> findAll() {
         return m50592Repository.findAll();
+    }
+
+
+    public M_50592 findById(Long id) {
+        return m50592Repository.findById(id).orElse(null);
     }
 }
