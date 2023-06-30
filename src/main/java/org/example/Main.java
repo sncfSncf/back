@@ -173,63 +173,63 @@ public class Main {
 
     private void deplacerFichier(File file, File outputFolder) throws InterruptedException {
         if (file.getName().toLowerCase().endsWith(".json") || file.getName().toLowerCase().endsWith(".xlsx")) {
-            File targetFile = new File(outputFolder, file.getName());
+            String fileName = file.getName();
+            File targetFolder = getTargetFolder(outputFolder, fileName);
+            File targetFile = new File(targetFolder, fileName);
 
             if (targetFile.exists()) {
                 String logMessage = "Le fichier cible existe déjà : " + targetFile.getAbsolutePath();
 
                 if (isIntelliJ) {
-                    System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                    System.out.println(logMessage);
                 } else {
-                    logger.info(logMessage);  // Affiche dans le logger du serveur
+                    logger.info(logMessage);
                 }
             } else {
-                // Le fichier n'est pas ouvert en mode écriture, on peut le déplacer
                 try {
                     Thread.sleep(1000);
                     Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                    String logMessage = "Le fichier a été déplacé avec succès : " + file.getName();
+                    String logMessage = "Le fichier a été déplacé avec succès : " + fileName;
 
                     if (isIntelliJ) {
-                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                        System.out.println(logMessage);
                     } else {
-                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                        logger.info(logMessage);
                     }
                 } catch (FileSystemException ex) {
                     String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
 
                     if (isIntelliJ) {
-                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                        System.out.println(logMessage);
                     } else {
-                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                        logger.info(logMessage);
                     }
 
-                    // Tenter de déplacer le fichier à nouveau après une pause
-                    int maxAttempts = 3; // Nombre maximal de tentatives de déplacement
+                    int maxAttempts = 3;
                     int attempt = 0;
 
                     while (attempt < maxAttempts) {
                         attempt++;
 
                         try {
-                            Thread.sleep(1000); // Pause de quelques millisecondes avant la prochaine tentative
+                            Thread.sleep(1000);
                             Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                            String logMessag = "Le fichier a été déplacé avec succès après une nouvelle tentative : " + file.getName();
+                            String logMessag = "Le fichier a été déplacé avec succès après une nouvelle tentative : " + fileName;
 
                             if (isIntelliJ) {
-                                System.out.println(logMessag);  // Affiche dans la console (syso) d'IntelliJ
+                                System.out.println(logMessag);
                             } else {
-                                logger.info(logMessag);  // Affiche dans le logger du serveur
+                                logger.info(logMessag);
                             }
 
-                            break; // Sortir de la boucle si le déplacement réussit
+                            break;
                         } catch (IOException | InterruptedException exx) {
                             String logMessa = "Erreur lors du déplacement du fichier (tentative " + attempt + " sur " + maxAttempts + ") : " + exx.getMessage();
 
                             if (isIntelliJ) {
-                                System.out.println(logMessa);  // Affiche dans la console (syso) d'IntelliJ
+                                System.out.println(logMessa);
                             } else {
-                                logger.info(logMessa);  // Affiche dans le logger du serveur
+                                logger.info(logMessa);
                             }
                         }
                     }
@@ -238,24 +238,40 @@ public class Main {
                         String logMessagee = "Impossible de déplacer le fichier après " + maxAttempts + " tentatives.";
 
                         if (isIntelliJ) {
-                            System.out.println(logMessagee);  // Affiche dans la console (syso) d'IntelliJ
+                            System.out.println(logMessagee);
                         } else {
-                            logger.info(logMessagee);  // Affiche dans le logger du serveur
+                            logger.info(logMessagee);
                         }
                     }
                 } catch (IOException ex) {
                     String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
 
                     if (isIntelliJ) {
-                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                        System.out.println(logMessage);
                     } else {
-                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                        logger.info(logMessage);
                     }
                 }
             }
         }
     }
 
+    private File getTargetFolder(File outputFolder, String fileName) {
+        // Extraire l'année et le mois du nom de fichier
+        String[] parts = fileName.split("_");
+        String[] dateParts = parts[1].split("\\.");
+        String year = dateParts[0];
+        String month = dateParts[1];
+
+        // Créer le répertoire année-mois s'il n'existe pas déjà
+        String folderName = year + "-" + month;
+        File targetFolder = new File(outputFolder, folderName);
+        if (!targetFolder.exists()) {
+            targetFolder.mkdirs();
+        }
+
+        return targetFolder;
+    }
 
 
 
@@ -1106,98 +1122,115 @@ public class Main {
                                                 }
 
 
-                                                String jsonFileName = m_50592.getFileName().substring(0, m_50592.getFileName().lastIndexOf('.'));
-
-
-// Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
-
-                                                File[] imageFiles = inputFolder.listFiles((dir, name) -> name.contains(jsonFileName) && (name.endsWith(".png") || name.endsWith(".bmp")));
-
-                                                if (imageFiles.length > 0) {
-
-                                                    File outputFolderFile = new File(outputFolder, jsonFileName);
-                                                    String logMesgg = "Il y a des images, création du répertoire {} a été créé => OK" + " , " + outputFolderFile.getName();
-
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMesgg);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMesgg);  // Affiche dans le logger du serveur
-                                                    }
-
-
-// Créer le dossier correspondant au fichier JSON
-
-                                                    boolean folderCreated = outputFolderFile.mkdir();
-
-                                                    if (folderCreated) {
-
-
-// Déplacer les fichiers d'image dans le dossier correspondant
-
-                                                        for (File imageFile : imageFiles) {
-
-                                                            try {
-                                                                Thread.sleep(1000);
-                                                            } catch (InterruptedException e) {
-                                                                e.printStackTrace();
-                                                            }
-
-
-                                                            File destFile = new File(outputFolderFile, imageFile.getName());
-
-                                                            boolean fileMoved = imageFile.renameTo(destFile);
-
-                                                            if (fileMoved) {
-                                                                String logMsgimage = "Déplacement de l'image {} => OK" + " , " + imageFile.getName();
-
-                                                                if (isIntelliJ) {
-                                                                    System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                                } else {
-                                                                    logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                                }
-
-                                                            } else {
-                                                                String logMsgimage = "Impossible de déplacer le fichier image : " + imageFile.getAbsolutePath();
-
-                                                                if (isIntelliJ) {
-                                                                    System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                                } else {
-                                                                    logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                                }
-
-
-                                                            }
-
-                                                        }
-
-
-                                                    } else {
-                                                        String logMsgimage = "Impossible de créer le dossier : " + outputFolderFile.getAbsolutePath();
-
-                                                        if (isIntelliJ) {
-                                                            System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                        } else {
-                                                            logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                        }
-
-
-                                                    }
-
-                                                }
-
-
-                                                File outputFolderFile = new File(outputFolder, jsonFileName);
-
-
-                                                String url50592 = outputFolderFile.getAbsolutePath().replace("\\", "/");
-
-                                                m_50592.setUrl50592(url50592);
 
                                                 m50592Service.save(m_50592);
                                                 if (m50592Service.findById(m_50592.getId()) != null) {
                                                     logger.info("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
                                                     System.out.println("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
                                                     deplacerFichier(m50592File, outputFolder);
+                                                    File targetFolder = getTargetFolder(outputFolder, m50592File.getName());
+                                                    String jsonFilePath = new File(targetFolder, m50592File.getName()).getAbsolutePath();
+                                                    String jsonFileName = m_50592.getFileName().substring(0, m_50592.getFileName().lastIndexOf('.'));
+                                                    File outputFolderFile = new File(jsonFilePath).getParentFile(); // Obtenir le dossier parent du fichier JSON
+                                                    String jsonFolderPath = new File(outputFolderFile, jsonFileName).getAbsolutePath(); // Récupérer le chemin du dossier correspondant au fichier JSON
+                                                    File outputFolderFilee = new File(jsonFolderPath); // Créer un objet File pour le dossier correspondant
+
+                                                    // Mettre à jour le chemin avec le nouveau dossier créé
+                                                    String url50592 = jsonFolderPath.replace("\\", "/");
+                                                    m_50592.setUrl50592(url50592);
+
+
+
+
+
+
+// Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
+
+                                                    File[] imageFiles = inputFolder.listFiles((dir, name) -> name.contains(jsonFileName) && (name.endsWith(".png") || name.endsWith(".bmp")));
+
+                                                    if (imageFiles.length > 0) {
+
+
+                                                        String logMesgg = "Il y a des images, création du répertoire {} a été créé => OK" + " , " + outputFolderFilee;
+
+                                                        if (isIntelliJ) {
+                                                            System.out.println(logMesgg);  // Affiche dans la console (syso) d'IntelliJ
+                                                        } else {
+                                                            logger.info(logMesgg);  // Affiche dans le logger du serveur
+                                                        }
+
+
+// Créer le dossier correspondant au fichier JSON
+
+                                                        // Création récursive du dossier correspondant au fichier JSON
+                                                        boolean folderCreated = outputFolderFilee.mkdir(); // Utiliser mkdirs() sur le parent directement
+
+
+                                                        if (folderCreated) {
+
+
+// Déplacer les fichiers d'image dans le dossier correspondant
+
+                                                            for (File imageFile : imageFiles) {
+
+                                                                try {
+                                                                    Thread.sleep(1000);
+                                                                } catch (InterruptedException e) {
+                                                                    e.printStackTrace();
+                                                                }
+
+
+                                                                File destFile = new File(outputFolderFilee, imageFile.getName());
+
+                                                                boolean fileMoved = imageFile.renameTo(destFile);
+
+                                                                if (fileMoved) {
+                                                                    String logMsgimage = "Déplacement de l'image {} => OK" + " , " + imageFile.getName();
+
+                                                                    if (isIntelliJ) {
+                                                                        System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                                    } else {
+                                                                        logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                                    }
+
+                                                                } else {
+                                                                    String logMsgimage = "Impossible de déplacer le fichier image : " + imageFile.getAbsolutePath();
+
+                                                                    if (isIntelliJ) {
+                                                                        System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                                    } else {
+                                                                        logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                                    }
+
+
+                                                                }
+
+                                                            }
+
+
+                                                        } else {
+                                                            String logMsgimage = "Impossible de créer le dossier : " + outputFolderFile.getAbsolutePath();
+
+                                                            if (isIntelliJ) {
+                                                                System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                            } else {
+                                                                logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                            }
+
+
+                                                        }
+
+                                                    }
+
+
+
+
+                                                    // Enregistrer l'objet m_50592 dans la base de données
+                                                    m50592Service.save(m_50592);
+
+
+
+
                                                 } else {
                                                     logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
                                                     System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
@@ -1441,100 +1474,6 @@ public class Main {
                         }
 
 
-                        File[] m50592Filesimages = outputFolder.listFiles((dir, name) -> name.startsWith("50592") && name.endsWith(".json"));
-
-                        if (m50592Filesimages != null) {
-                            for (File m50592 : m50592Filesimages) {
-                                String jsonFileName = m50592.getName().substring(0, m50592.getName().lastIndexOf('.'));
-
-
-// Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
-
-                                File[] imageFiles = inputFolder.listFiles((dir, name) -> name.contains(jsonFileName) && (name.endsWith(".png") || name.endsWith(".bmp")));
-
-                                if (imageFiles.length > 0) {
-
-                                    File outputFolderFile = new File(outputFolder, jsonFileName);
-                                    String logMesgg = "Il y a des images, création du répertoire {} a été créé => OK" + " , " + outputFolderFile.getName();
-
-                                    if (isIntelliJ) {
-                                        System.out.println(logMesgg);  // Affiche dans la console (syso) d'IntelliJ
-                                    } else {
-                                        logger.info(logMesgg);  // Affiche dans le logger du serveur
-                                    }
-
-
-// Créer le dossier correspondant au fichier JSON
-
-                                    boolean folderCreated = outputFolderFile.mkdir();
-
-                                    if (folderCreated) {
-
-
-// Déplacer les fichiers d'image dans le dossier correspondant
-
-                                        for (File imageFile : imageFiles) {
-
-                                            try {
-                                                Thread.sleep(1000);
-                                            } catch (InterruptedException e) {
-                                                e.printStackTrace();
-                                            }
-
-
-                                            File destFile = new File(outputFolderFile, imageFile.getName());
-
-                                            boolean fileMoved = imageFile.renameTo(destFile);
-
-                                            if (fileMoved) {
-                                                String logMsgimage = "Déplacement de l'image {} => OK" + " , " + imageFile.getName();
-
-                                                if (isIntelliJ) {
-                                                    System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                }
-
-                                            } else {
-                                                String logMsgimage = "Impossible de déplacer le fichier image : " + imageFile.getAbsolutePath();
-
-                                                if (isIntelliJ) {
-                                                    System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                }
-
-
-                                            }
-
-                                        }
-
-
-                                    } else {
-                                        String logMsgimage = "Impossible de créer le dossier : " + outputFolderFile.getAbsolutePath();
-
-                                        if (isIntelliJ) {
-                                            System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                        } else {
-                                            logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                        }
-
-
-                                    }
-
-                                }
-                            }
-
-
-
-
-
-
-                        }
-
-
-
-
 
 
 
@@ -1758,15 +1697,15 @@ public class Main {
                         }
 
                         //deplacement de fichier dans output
-
-                        File targetFileexcel = new File(outputFolder, excelFile.getName());
+                        File targetFolder = getTargetFolder(outputFolder, excelFile.getName());
+                        File targetFileexcel = new File(targetFolder, excelFile.getName());
                         try {
                             Files.move(excelFile.toPath(), targetFileexcel.toPath(), StandardCopyOption.REPLACE_EXISTING);
                             String logMessage = "Le fichier " + excelFile.getName() + " a été déplacé vers " + targetFileexcel.getAbsolutePath();
                             if (isIntelliJ) {
-                                System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                                System.out.println(logMessage);
                             } else {
-                                logger.info(logMessage);  // Affiche dans le logger du serveur
+                                logger.info(logMessage);
                             }
                         } catch (IOException e) {
                             // Gérer l'exception en cas d'erreur de déplacement du fichier
@@ -1949,15 +1888,15 @@ public class Main {
                                             logger.info("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
                                             System.out.println("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
                                             //deplacement de fichier dans output
-
-                                            File targetFileexcel = new File(outputFolder, samFile.getName());
+                                            File targetFolder = getTargetFolder(outputFolder, samFile.getName());
+                                            File targetFileexcel = new File(targetFolder, samFile.getName());
                                             try {
                                                 Files.move(samFile.toPath(), targetFileexcel.toPath(), StandardCopyOption.REPLACE_EXISTING);
                                                 String logMessage = "Le fichier " + samFile.getName() + " a été déplacé vers " + targetFileexcel.getAbsolutePath();
                                                 if (isIntelliJ) {
-                                                    System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                                                    System.out.println(logMessage);
                                                 } else {
-                                                    logger.info(logMessage);  // Affiche dans le logger du serveur
+                                                    logger.info(logMessage);
                                                 }
                                             } catch (IOException e) {
                                                 // Gérer l'exception en cas d'erreur de déplacement du fichier
@@ -2317,92 +2256,7 @@ public class Main {
                                     }
 
 
-                                    String jsonFileName = m_50592.getFileName().substring(0, m_50592.getFileName().lastIndexOf('.'));
 
-
-// Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
-
-                                    File[] imageFiles = inputFolder.listFiles((dir, name) -> name.contains(jsonFileName) && (name.endsWith(".png") || name.endsWith(".bmp")));
-
-                                    if (imageFiles.length > 0) {
-
-                                        File outputFolderFile = new File(outputFolder, jsonFileName);
-                                        String logMesgg = "Il y a des images, création du répertoire {} a été créé => OK" + " , " + outputFolderFile.getName();
-
-                                        if (isIntelliJ) {
-                                            System.out.println(logMesgg);  // Affiche dans la console (syso) d'IntelliJ
-                                        } else {
-                                            logger.info(logMesgg);  // Affiche dans le logger du serveur
-                                        }
-
-
-// Créer le dossier correspondant au fichier JSON
-
-                                        boolean folderCreated = outputFolderFile.mkdir();
-
-                                        if (folderCreated) {
-
-
-// Déplacer les fichiers d'image dans le dossier correspondant
-
-                                            for (File imageFile : imageFiles) {
-
-                                                try {
-                                                    Thread.sleep(1000);
-                                                } catch (InterruptedException e) {
-                                                    e.printStackTrace();
-                                                }
-
-
-                                                File destFile = new File(outputFolderFile, imageFile.getName());
-
-                                                boolean fileMoved = imageFile.renameTo(destFile);
-
-                                                if (fileMoved) {
-                                                    String logMsgimage = "Déplacement de l'image {} => OK" + " , " + imageFile.getName();
-
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                    }
-
-                                                } else {
-                                                    String logMsgimage = "Impossible de déplacer le fichier image : " + imageFile.getAbsolutePath();
-
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                                    }
-
-
-                                                }
-
-                                            }
-
-
-                                        } else {
-                                            String logMsgimage = "Impossible de créer le dossier : " + outputFolderFile.getAbsolutePath();
-
-                                            if (isIntelliJ) {
-                                                System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
-                                            } else {
-                                                logger.info(logMsgimage);  // Affiche dans le logger du serveur
-                                            }
-
-
-                                        }
-
-                                    }
-
-
-                                    File outputFolderFile = new File(outputFolder, jsonFileName);
-
-
-                                    String url50592 = outputFolderFile.getAbsolutePath().replace("\\", "/");
-
-                                    m_50592.setUrl50592(url50592);
 
                                     m50592Service.save(m_50592);
 
@@ -2410,20 +2264,121 @@ public class Main {
                                         logger.info("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
                                         System.out.println("Le fichier a été enregistré dans la base de données: " + m_50592.getFileName());
                                         //deplacement de fichier dans output
-
-                                        File targetFileexcel = new File(outputFolder, m50592File.getName());
+                                        File targetFolder = getTargetFolder(outputFolder, m50592File.getName());
+                                        File targetFileexcel = new File(targetFolder, m50592File.getName());
                                         try {
                                             Files.move(m50592File.toPath(), targetFileexcel.toPath(), StandardCopyOption.REPLACE_EXISTING);
                                             String logMessage = "Le fichier " + m50592File.getName() + " a été déplacé vers " + targetFileexcel.getAbsolutePath();
                                             if (isIntelliJ) {
-                                                System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                                                System.out.println(logMessage);
                                             } else {
-                                                logger.info(logMessage);  // Affiche dans le logger du serveur
+                                                logger.info(logMessage);
                                             }
+                                            String jsonFilePath = new File(targetFolder, m50592File.getName()).getAbsolutePath();
+                                            String jsonFileName = m_50592.getFileName().substring(0, m_50592.getFileName().lastIndexOf('.'));
+                                            File outputFolderFile = new File(jsonFilePath).getParentFile(); // Obtenir le dossier parent du fichier JSON
+                                            String jsonFolderPath = new File(outputFolderFile, jsonFileName).getAbsolutePath(); // Récupérer le chemin du dossier correspondant au fichier JSON
+                                            File outputFolderFilee = new File(jsonFolderPath); // Créer un objet File pour le dossier correspondant
+
+                                            // Mettre à jour le chemin avec le nouveau dossier créé
+                                            String url50592 = jsonFolderPath.replace("\\", "/");
+                                            m_50592.setUrl50592(url50592);
+
+
+
+
+
+
+// Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
+
+                                            File[] imageFiles = inputFolder.listFiles((dir, name) -> name.contains(jsonFileName) && (name.endsWith(".png") || name.endsWith(".bmp")));
+
+                                            if (imageFiles.length > 0) {
+
+
+                                                String logMesgg = "Il y a des images, création du répertoire {} a été créé => OK" + " , " + outputFolderFilee;
+
+                                                if (isIntelliJ) {
+                                                    System.out.println(logMesgg);  // Affiche dans la console (syso) d'IntelliJ
+                                                } else {
+                                                    logger.info(logMesgg);  // Affiche dans le logger du serveur
+                                                }
+
+
+// Créer le dossier correspondant au fichier JSON
+
+                                                // Création récursive du dossier correspondant au fichier JSON
+                                                boolean folderCreated = outputFolderFilee.mkdir(); // Utiliser mkdirs() sur le parent directement
+
+
+                                                if (folderCreated) {
+
+
+// Déplacer les fichiers d'image dans le dossier correspondant
+
+                                                    for (File imageFile : imageFiles) {
+
+                                                        try {
+                                                            Thread.sleep(1000);
+                                                        } catch (InterruptedException e) {
+                                                            e.printStackTrace();
+                                                        }
+
+
+                                                        File destFile = new File(outputFolderFilee, imageFile.getName());
+
+                                                        boolean fileMoved = imageFile.renameTo(destFile);
+
+                                                        if (fileMoved) {
+                                                            String logMsgimage = "Déplacement de l'image {} => OK" + " , " + imageFile.getName();
+
+                                                            if (isIntelliJ) {
+                                                                System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                            } else {
+                                                                logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                            }
+
+                                                        } else {
+                                                            String logMsgimage = "Impossible de déplacer le fichier image : " + imageFile.getAbsolutePath();
+
+                                                            if (isIntelliJ) {
+                                                                System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                            } else {
+                                                                logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                            }
+
+
+                                                        }
+
+                                                    }
+
+
+                                                } else {
+                                                    String logMsgimage = "Impossible de créer le dossier : " + outputFolderFile.getAbsolutePath();
+
+                                                    if (isIntelliJ) {
+                                                        System.out.println(logMsgimage);  // Affiche dans la console (syso) d'IntelliJ
+                                                    } else {
+                                                        logger.info(logMsgimage);  // Affiche dans le logger du serveur
+                                                    }
+
+
+                                                }
+
+                                            }
+
+
+
+
+                                            // Enregistrer l'objet m_50592 dans la base de données
+                                            m50592Service.save(m_50592);
                                         } catch (IOException e) {
                                             // Gérer l'exception en cas d'erreur de déplacement du fichier
                                             e.printStackTrace();
                                         }
+
+
+
                                     } else {
                                         logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
                                         System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + m_50592.getFileName());
