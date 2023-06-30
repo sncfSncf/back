@@ -473,12 +473,20 @@ public class SamTrainController {
             for (Result results : train.getResults()) {
                 trainMap.put("numTrain", results.getEngine());
 
-
                 Mr mr = mrRepository.findByNumTrain(results.getEngine());
                 if (mr != null) {
                     trainMap.put("mr", mr.getMr());
+                } else {
+                    trainMap.put("mr", null); // Ou une valeur par défaut appropriée si nécessaire
                 }
             }
+
+// Vérification si numTrain ou mr est manquant
+            if (!trainMap.containsKey("numTrain") || !trainMap.containsKey("mr")) {
+                trainMap.put("numTrain", null); // Ou une valeur par défaut appropriée si nécessaire
+                trainMap.put("mr", null); // Ou une valeur par défaut appropriée si nécessaire
+            }
+
             result.add(trainMap);
         }
 

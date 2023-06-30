@@ -187,7 +187,7 @@ public class Sam  {
                         java.util.Date parsedDate = dateFormat.parse(datePart);
                         java.sql.Date date = new java.sql.Date(parsedDate.getTime());
 
-                        SimpleDateFormat timeFormat = new SimpleDateFormat("hh'h'mm'm'ss's'");
+                        SimpleDateFormat timeFormat = new SimpleDateFormat("HH'h'mm'm'ss's'");
                         java.util.Date parsedTime = timeFormat.parse(heurePart);
                         java.sql.Time time = new java.sql.Time(parsedTime.getTime());
 

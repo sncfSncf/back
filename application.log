@@ -2131,3 +2131,872 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 2023-06-29 18:44:14,368 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-06-29 18:44:14,378 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
 2023-06-29 18:44:14,394 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 10:57:52,556 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 18112 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 10:57:52,559 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 10:57:52,562 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 10:57:52,698 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 10:57:52,698 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 10:57:54,802 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 10:57:55,059 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 206 ms. Found 6 JPA repository interfaces.
+2023-06-30 10:57:57,341 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 10:57:57,370 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 10:57:57,372 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 10:57:57,373 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 10:57:57,647 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 10:57:57,647 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4948 ms
+2023-06-30 10:57:57,737 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 10:57:58,705 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 10:57:58,754 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 10:57:59,103 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 10:57:59,291 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 10:57:59,820 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 10:58:00,171 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 10:58:01,771 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
+2023-06-30 10:58:01,772 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
+2023-06-30 10:58:01,776 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 10:58:01,793 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 10:58:01,797 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-30 10:58:01,826 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-30 10:58:01,879 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.example.Main.main(Main.java:123)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
+	at org.hibernate.persister.internal.PersisterFactoryImpl.createEntityPersister(PersisterFactoryImpl.java:123)
+	at org.hibernate.persister.internal.PersisterFactoryImpl.createEntityPersister(PersisterFactoryImpl.java:77)
+	at org.hibernate.metamodel.internal.MetamodelImpl.initialize(MetamodelImpl.java:181)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:319)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 25 common frames omitted
+Caused by: org.hibernate.InstantiationException: could not instantiate test object : org.example.model.M_50592
+	at org.hibernate.engine.internal.UnsavedValueFactory.instantiate(UnsavedValueFactory.java:43)
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:68)
+	at org.hibernate.tuple.PropertyFactory.buildIdentifierAttribute(PropertyFactory.java:65)
+	at org.hibernate.tuple.entity.EntityMetamodel.<init>(EntityMetamodel.java:142)
+	at org.hibernate.persister.entity.AbstractEntityPersister.<init>(AbstractEntityPersister.java:613)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.<init>(SingleTableEntityPersister.java:126)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.hibernate.persister.internal.PersisterFactoryImpl.createEntityPersister(PersisterFactoryImpl.java:96)
+	... 33 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.hibernate.engine.internal.UnsavedValueFactory.instantiate(UnsavedValueFactory.java:40)
+	... 44 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot read the array length because "elements" is null
+	at java.base/java.util.List.of(List.java:1037)
+	at org.example.model.M_50592.loadFilenamesStartingWith50592(M_50592.java:219)
+	at org.example.model.M_50592.<init>(M_50592.java:190)
+	... 50 common frames omitted
+2023-06-30 10:58:40,382 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 10:58:40,384 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 16048 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 10:58:40,387 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 10:58:40,490 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 10:58:40,491 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 10:58:42,057 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 10:58:42,241 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165 ms. Found 6 JPA repository interfaces.
+2023-06-30 10:58:44,369 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 10:58:44,388 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 10:58:44,388 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 10:58:44,388 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 10:58:44,583 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 10:58:44,583 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4090 ms
+2023-06-30 10:58:44,656 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 10:58:45,366 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 10:58:45,397 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 10:58:45,782 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 10:58:45,906 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 10:58:46,154 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 10:58:46,347 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 10:58:52,060 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 10:58:52,078 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 10:58:53,447 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 10:58:54,378 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 10:58:54,425 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 10:58:54,472 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 10:58:54,498 [restartedMain] INFO  org.example.Main - Started Main in 14.908 seconds (JVM running for 16.954)
+2023-06-30 10:58:54,514 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:01:30,665 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-_2023.07.28_19h33m28s.json
+2023-06-30 11:01:30,874 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.07.28_19h33m28s.json
+2023-06-30 11:01:35,311 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-_2023.07.02_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:01:35,672 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.28_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:30:00,913 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:30:00,917 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:30:00,926 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:30:16,214 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:30:16,213 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 436 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:30:16,217 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:30:16,312 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:30:16,312 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:30:20,006 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:30:20,122 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:30:21,247 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:30:21,260 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:30:21,261 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:30:21,261 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:30:21,432 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:30:21,432 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5119 ms
+2023-06-30 11:30:21,489 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:30:21,962 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:30:21,985 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:30:22,195 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:30:22,309 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:30:22,572 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:30:22,781 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:30:27,488 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:30:27,502 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:30:28,428 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:30:29,200 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:30:29,235 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:30:29,264 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:30:29,280 [restartedMain] INFO  org.example.Main - Started Main in 13.789 seconds (JVM running for 15.477)
+2023-06-30 11:30:31,168 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:31:22,103 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:31:22,108 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:31:22,121 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:31:37,222 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:31:37,221 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 18120 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:31:37,226 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:31:37,332 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:31:37,332 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:31:38,887 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:31:39,029 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:31:40,180 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:31:40,201 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:31:40,202 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:31:40,202 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:31:40,397 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:31:40,398 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3065 ms
+2023-06-30 11:31:40,488 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:31:41,261 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:31:41,285 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:31:42,087 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:31:42,672 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:31:43,448 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:31:43,806 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:31:48,932 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:31:48,946 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:31:50,047 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:31:51,085 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:31:51,138 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:31:51,175 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:31:51,221 [restartedMain] INFO  org.example.Main - Started Main in 14.774 seconds (JVM running for 16.918)
+2023-06-30 11:31:53,224 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:32:34,475 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:32:34,480 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:32:34,494 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:32:48,527 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 10908 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:32:48,527 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:32:48,533 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:32:48,628 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:32:48,628 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:32:50,875 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:32:51,212 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 283 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:32:53,404 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:32:53,427 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:32:53,428 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:32:53,429 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:32:53,771 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:32:53,772 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5143 ms
+2023-06-30 11:32:53,903 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:32:54,806 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:32:54,823 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:32:55,066 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:32:55,178 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:32:55,442 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:32:55,571 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:32:58,179 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:32:58,187 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:32:58,800 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:32:59,239 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:32:59,258 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:32:59,276 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:32:59,286 [restartedMain] INFO  org.example.Main - Started Main in 11.559 seconds (JVM running for 13.566)
+2023-06-30 11:33:00,407 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:34:25,169 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:34:25,173 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:34:25,181 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:34:39,424 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:34:39,429 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 9580 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:34:39,430 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:34:39,552 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:34:39,553 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:34:41,089 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:34:41,208 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:34:42,259 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:34:42,276 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:34:42,276 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:34:42,276 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:34:42,415 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:34:42,415 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2861 ms
+2023-06-30 11:34:42,466 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:34:43,020 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:34:43,038 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:34:43,343 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:34:43,460 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:34:43,816 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:34:44,083 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:34:50,005 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:34:50,020 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:34:51,015 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:34:51,781 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:34:51,814 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:34:51,845 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:34:51,863 [restartedMain] INFO  org.example.Main - Started Main in 13.161 seconds (JVM running for 14.765)
+2023-06-30 11:34:54,106 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:36:01,633 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:36:01,636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:36:01,641 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:36:15,341 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:36:15,341 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 9476 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:36:15,346 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:36:15,432 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:36:15,432 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:36:16,939 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:36:17,066 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:36:18,081 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:36:18,093 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:36:18,093 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:36:18,093 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:36:18,220 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:36:18,220 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2787 ms
+2023-06-30 11:36:18,277 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:36:18,725 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:36:18,769 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:36:19,025 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:36:19,142 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:36:19,454 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:36:19,650 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:36:22,869 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:36:22,883 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:36:23,597 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:36:24,170 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:36:24,200 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:36:24,225 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:36:24,242 [restartedMain] INFO  org.example.Main - Started Main in 9.751 seconds (JVM running for 11.564)
+2023-06-30 11:36:25,417 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:36:47,455 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:36:47,457 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:36:47,463 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:37:03,563 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 20032 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:37:03,563 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:37:03,569 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:37:03,658 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:37:03,658 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:37:05,136 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:37:05,266 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:37:06,417 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:37:06,435 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:37:06,436 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:37:06,436 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:37:06,626 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:37:06,627 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2968 ms
+2023-06-30 11:37:06,701 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:37:07,384 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:37:07,406 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:37:07,726 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:37:07,840 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:37:08,184 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:37:08,420 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:37:13,642 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:37:13,659 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:37:14,523 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:37:15,078 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:37:15,112 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:37:15,145 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:37:15,166 [restartedMain] INFO  org.example.Main - Started Main in 12.294 seconds (JVM running for 14.122)
+2023-06-30 11:37:17,279 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:38:04,981 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:38:04,984 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:38:04,991 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:38:17,775 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 9160 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:38:17,775 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:38:17,779 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:38:17,853 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:38:17,854 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:38:19,029 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:38:19,152 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:38:20,272 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:38:20,286 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:38:20,287 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:38:20,287 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:38:20,418 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:38:20,418 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2564 ms
+2023-06-30 11:38:20,469 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:38:20,897 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:38:20,909 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:38:21,069 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:38:21,164 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:38:21,461 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:38:21,679 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:38:27,344 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:38:27,360 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:38:28,522 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:38:29,262 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:38:29,286 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:38:29,310 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:38:29,326 [restartedMain] INFO  org.example.Main - Started Main in 12.192 seconds (JVM running for 13.991)
+2023-06-30 11:38:30,864 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:39:40,506 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:39:40,509 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:39:40,517 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:40:05,095 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:40:05,102 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 18040 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:40:05,103 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:40:05,183 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:40:05,183 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:40:08,150 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:40:08,308 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:40:09,297 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:40:09,310 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:40:09,310 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:40:09,310 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:40:09,429 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:40:09,429 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4245 ms
+2023-06-30 11:40:09,470 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:40:09,907 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:40:09,925 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:40:10,126 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:40:10,225 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:40:10,497 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:40:10,727 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:40:14,080 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:40:14,090 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:40:14,836 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:40:15,575 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:40:15,612 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:40:15,644 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:40:15,662 [restartedMain] INFO  org.example.Main - Started Main in 11.15 seconds (JVM running for 12.807)
+2023-06-30 11:40:17,051 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:40:44,537 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:40:44,542 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:40:44,548 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:40:56,844 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 10020 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:40:56,848 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:40:56,848 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:40:56,921 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:40:56,921 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:40:58,685 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:40:58,792 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:40:59,981 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:40:59,994 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:40:59,994 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:40:59,995 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:41:00,130 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:41:00,130 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3208 ms
+2023-06-30 11:41:00,170 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:41:00,553 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:41:00,564 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:41:00,725 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:41:00,818 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:41:01,011 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:41:01,482 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:41:05,683 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:41:05,695 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:41:06,711 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:41:07,274 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:41:07,297 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:41:07,321 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:41:07,335 [restartedMain] INFO  org.example.Main - Started Main in 11.102 seconds (JVM running for 12.587)
+2023-06-30 11:41:08,850 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:41:11,599 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:41:11,603 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:41:11,608 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:41:22,311 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:41:22,315 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 12452 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:41:22,316 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:41:22,402 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:41:22,402 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:41:23,598 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:41:23,962 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 352 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:41:26,628 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:41:26,647 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:41:26,647 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:41:26,647 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:41:26,790 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:41:26,790 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4387 ms
+2023-06-30 11:41:26,844 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:41:27,348 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:41:27,361 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:41:27,533 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:41:27,626 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:41:27,909 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:41:28,061 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:41:31,139 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:41:31,149 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:41:31,945 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:41:32,457 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:41:32,477 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:41:32,501 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:41:32,513 [restartedMain] INFO  org.example.Main - Started Main in 10.826 seconds (JVM running for 12.577)
+2023-06-30 11:41:34,282 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:42:50,109 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:42:50,112 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:42:50,117 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:43:12,928 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:43:12,928 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 19776 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:43:12,933 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:43:13,023 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:43:13,023 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:43:14,290 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:43:14,395 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:43:15,203 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:43:15,214 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:43:15,214 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:43:15,215 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:43:15,325 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:43:15,325 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2301 ms
+2023-06-30 11:43:15,371 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:43:15,715 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:43:15,731 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:43:15,906 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:43:16,001 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:43:16,202 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:43:16,384 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:43:19,716 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:43:19,726 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:43:20,373 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:43:20,832 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:43:20,851 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:43:20,873 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:43:20,887 [restartedMain] INFO  org.example.Main - Started Main in 8.595 seconds (JVM running for 10.775)
+2023-06-30 11:43:22,175 [restartedMain] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.07.29_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:43:22,472 [restartedMain] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.29_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:43:23,016 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:51:55,297 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:51:55,301 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:51:55,308 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:52:05,241 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:52:05,241 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 19420 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:52:05,244 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:52:05,323 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:52:05,324 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:52:06,733 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:52:06,989 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 237 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:52:09,059 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:52:09,078 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:52:09,078 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:52:09,078 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:52:09,216 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:52:09,216 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3891 ms
+2023-06-30 11:52:09,259 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:52:09,759 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:52:09,771 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:52:09,946 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:52:10,091 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:52:10,391 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:52:10,592 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:52:14,212 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:52:14,222 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:52:14,976 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:52:15,466 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:52:15,486 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:52:15,509 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:52:15,523 [restartedMain] INFO  org.example.Main - Started Main in 10.988 seconds (JVM running for 12.588)
+2023-06-30 11:52:22,159 [restartedMain] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.07.29_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:52:22,473 [restartedMain] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.29_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:52:23,097 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:53:29,075 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:53:29,078 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:53:29,085 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:53:40,280 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:53:40,283 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 19400 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:53:40,284 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:53:40,368 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:53:40,368 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:53:41,535 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:53:41,629 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:53:44,218 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:53:44,240 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:53:44,241 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:53:44,241 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:53:44,462 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:53:44,463 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4094 ms
+2023-06-30 11:53:44,543 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:53:44,940 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:53:44,953 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:53:45,137 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:53:45,231 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:53:45,467 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:53:45,625 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:53:48,916 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:53:48,927 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:53:49,800 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:53:50,330 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:53:50,355 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:53:50,381 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:53:50,399 [restartedMain] INFO  org.example.Main - Started Main in 10.757 seconds (JVM running for 12.469)
+2023-06-30 11:53:51,806 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:55:01,595 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:55:01,599 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:55:01,606 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:55:16,911 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:55:16,917 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 20804 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:55:16,918 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:55:16,995 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:55:16,996 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:55:18,424 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:55:18,571 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:55:19,452 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:55:19,463 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:55:19,463 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:55:19,463 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:55:19,597 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:55:19,598 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2601 ms
+2023-06-30 11:55:19,646 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:55:20,020 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:55:20,033 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:55:20,210 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:55:20,327 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:55:20,617 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:55:20,844 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:55:24,174 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:55:24,184 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:55:24,818 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:55:25,316 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:55:25,335 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:55:25,357 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:55:25,369 [restartedMain] INFO  org.example.Main - Started Main in 9.145 seconds (JVM running for 10.895)
+2023-06-30 11:55:25,375 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:56:15,803 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:56:15,806 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 11:56:15,817 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 11:56:28,573 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 11:56:28,571 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 3120 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 11:56:28,576 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 11:56:28,668 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 11:56:28,668 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 11:56:29,963 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 11:56:30,066 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2023-06-30 11:56:31,220 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 11:56:31,248 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:56:31,249 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 11:56:31,249 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 11:56:31,444 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 11:56:31,445 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2775 ms
+2023-06-30 11:56:31,516 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 11:56:32,201 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 11:56:32,226 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 11:56:32,495 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 11:56:32,626 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 11:56:33,023 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 11:56:33,288 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 11:56:37,148 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 11:56:37,160 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 11:56:37,924 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 11:56:38,454 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 11:56:38,481 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 11:56:38,503 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 11:56:38,545 [restartedMain] INFO  org.example.Main - Started Main in 10.633 seconds (JVM running for 12.535)
+2023-06-30 11:56:38,553 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 11:58:19,727 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-_2023.07.28_19h33m28s.json
+2023-06-30 11:58:19,859 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.07.30_19h33m30s.json
+2023-06-30 11:58:21,368 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-_2023.07.02_00h15m28s_Résultats-1xTint.json
+2023-06-30 11:58:21,616 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.30_00h15m28s_Résultats-1xTint.json
+2023-06-30 12:00:57,018 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:00:57,022 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 12:00:57,027 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 12:01:46,992 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 12:01:46,999 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 14016 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 12:01:47,000 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 12:01:47,057 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 12:01:47,057 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 12:01:47,862 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 12:01:47,933 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 6 JPA repository interfaces.
+2023-06-30 12:01:48,567 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 12:01:48,576 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:01:48,576 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 12:01:48,576 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 12:01:48,671 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 12:01:48,672 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1615 ms
+2023-06-30 12:01:48,704 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 12:01:49,009 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 12:01:49,018 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 12:01:49,146 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 12:01:49,222 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 12:01:49,370 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 12:01:49,479 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 12:01:51,792 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 12:01:51,804 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:01:52,320 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 12:01:52,706 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 12:01:52,723 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:01:52,740 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 12:01:52,750 [restartedMain] INFO  org.example.Main - Started Main in 6.225 seconds (JVM running for 7.448)
+2023-06-30 12:01:53,756 [restartedMain] INFO  org.example.Main - le fichier à traiter SAM005-_2023.07.28_19h33m28s.json
+2023-06-30 12:01:53,861 [restartedMain] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: SAM005-Chevilly_2023.07.31_19h33m30s.json
+2023-06-30 12:01:54,372 [restartedMain] INFO  org.example.Main - le fichier à traiter 50592-_2023.07.02_00h15m28s_Résultats-1xTint.json
+2023-06-30 12:01:54,627 [restartedMain] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.31_00h15m28s_Résultats-1xTint.json
+2023-06-30 12:01:54,977 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 12:05:14,952 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:05:14,956 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 12:05:14,964 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 12:05:30,434 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 7996 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 12:05:30,439 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 12:05:30,442 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 12:05:30,523 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 12:05:30,524 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 12:05:33,851 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 12:05:33,951 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2023-06-30 12:05:34,801 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 12:05:34,812 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:05:34,813 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 12:05:34,813 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 12:05:34,932 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 12:05:34,933 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4409 ms
+2023-06-30 12:05:34,974 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 12:05:35,354 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 12:05:35,365 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 12:05:35,519 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 12:05:35,610 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 12:05:35,831 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 12:05:35,984 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 12:05:39,258 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 12:05:39,269 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:05:39,912 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 12:05:40,429 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 12:05:40,451 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:05:40,473 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 12:05:40,487 [restartedMain] INFO  org.example.Main - Started Main in 10.667 seconds (JVM running for 12.357)
+2023-06-30 12:05:42,031 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 12:05:50,017 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:05:50,019 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 12:05:50,025 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 12:10:54,015 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 12:10:54,016 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 22044 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 12:10:54,017 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 12:10:54,068 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 12:10:54,068 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 12:10:54,856 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 12:10:54,929 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 6 JPA repository interfaces.
+2023-06-30 12:10:55,581 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 12:10:55,591 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:10:55,592 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 12:10:55,592 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 12:10:55,690 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 12:10:55,690 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1622 ms
+2023-06-30 12:10:55,721 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 12:10:56,107 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 12:10:56,115 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 12:10:56,230 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 12:10:56,327 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 12:10:56,513 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 12:10:56,641 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 12:10:58,944 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 12:10:58,952 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:10:59,497 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 12:10:59,922 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 12:10:59,942 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:10:59,962 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 12:10:59,976 [restartedMain] INFO  org.example.Main - Started Main in 6.325 seconds (JVM running for 7.513)
+2023-06-30 12:10:59,981 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 12:11:19,250 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-30 12:11:19,250 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-06-30 12:11:19,254 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2023-06-30 12:13:07,249 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:13:07,253 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 12:13:07,260 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 12:13:22,063 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 9736 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 12:13:22,066 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 12:13:22,067 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 12:13:22,136 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 12:13:22,136 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 12:13:23,021 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 12:13:23,091 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 6 JPA repository interfaces.
+2023-06-30 12:13:23,695 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 12:13:23,704 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:13:23,705 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 12:13:23,705 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 12:13:23,796 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 12:13:23,796 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1659 ms
+2023-06-30 12:13:23,828 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 12:13:24,104 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 12:13:24,113 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 12:13:24,214 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 12:13:24,280 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 12:13:24,449 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 12:13:24,567 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 12:13:28,075 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 12:13:28,095 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 12:13:29,993 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 12:13:31,206 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 12:13:31,245 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 12:13:31,285 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 12:13:31,309 [restartedMain] INFO  org.example.Main - Started Main in 9.876 seconds (JVM running for 11.396)
+2023-06-30 12:13:31,319 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 12:13:33,171 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-30 12:13:33,171 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-06-30 12:13:33,174 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-06-30 14:35:58,337 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=2h17m4s30ms659µs900ns).
+2023-06-30 15:23:12,360 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=9m13s386ms728µs300ns).
+2023-06-30 16:03:23,313 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:03:23,337 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 16:03:23,352 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 16:03:39,157 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 16:03:39,157 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 21364 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 16:03:39,161 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 16:03:39,245 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 16:03:39,246 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 16:03:40,795 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 16:03:40,918 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2023-06-30 16:03:41,899 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 16:03:41,914 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:03:41,915 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 16:03:41,915 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 16:03:42,049 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 16:03:42,049 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2802 ms
+2023-06-30 16:03:42,130 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 16:03:42,642 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 16:03:42,654 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 16:03:42,827 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 16:03:42,937 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 16:03:43,166 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 16:03:43,347 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 16:03:46,749 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 16:03:46,757 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:03:47,305 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 16:03:47,725 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 16:03:47,743 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:03:47,771 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 16:03:47,786 [restartedMain] INFO  org.example.Main - Started Main in 9.207 seconds (JVM running for 10.825)
+2023-06-30 16:03:47,792 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 16:03:51,223 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-_2023.07.28_19h33m28s.json
+2023-06-30 16:07:05,614 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:07:05,618 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 16:07:05,626 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 16:07:16,667 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 12016 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 16:07:16,667 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 16:07:16,671 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 16:07:16,760 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 16:07:16,760 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 16:07:17,753 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 16:07:17,834 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 6 JPA repository interfaces.
+2023-06-30 16:07:19,041 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 16:07:19,061 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:07:19,062 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 16:07:19,062 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 16:07:19,265 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 16:07:19,265 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2504 ms
+2023-06-30 16:07:19,335 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 16:07:19,953 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 16:07:19,973 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 16:07:20,292 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 16:07:20,411 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 16:07:20,786 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 16:07:21,060 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 16:07:24,534 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 16:07:24,546 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:07:25,446 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 16:07:26,514 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 16:07:26,634 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:07:27,294 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 16:07:27,709 [restartedMain] INFO  org.example.Main - Started Main in 11.557 seconds (JVM running for 13.202)
+2023-06-30 16:07:27,766 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 16:07:29,229 [Thread-7] INFO  org.example.Main - le fichier à traiter SAM005-_2023.07.28_19h33m28s.json
+2023-06-30 16:07:52,900 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:07:52,904 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 16:07:52,914 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 16:07:57,766 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 16:07:57,772 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 10456 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 16:07:57,773 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 16:07:57,842 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 16:07:57,842 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 16:07:59,133 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 16:07:59,227 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 6 JPA repository interfaces.
+2023-06-30 16:07:59,962 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 16:07:59,971 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:07:59,971 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 16:07:59,972 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 16:08:00,083 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 16:08:00,083 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2240 ms
+2023-06-30 16:08:00,122 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 16:08:00,452 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 16:08:00,463 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 16:08:00,610 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 16:08:00,698 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 16:08:00,954 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 16:08:01,125 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 16:08:05,330 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 16:08:05,349 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:08:06,653 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 16:08:07,435 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 16:08:07,460 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:08:07,484 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 16:08:07,499 [restartedMain] INFO  org.example.Main - Started Main in 10.329 seconds (JVM running for 11.731)
+2023-06-30 16:08:07,505 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 16:10:08,665 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:10:08,670 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 16:10:08,675 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.
+2023-06-30 16:10:28,177 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-06-30 16:10:28,179 [restartedMain] INFO  org.example.Main - Starting Main using Java 17.0.6 on 4-FR92PC-057 with PID 8532 (C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend\target\classes started by Ilham Barache in C:\Users\Ilham Barache\Downloads\Backend-20230612T070149Z-001\Backend)
+2023-06-30 16:10:28,181 [restartedMain] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2023-06-30 16:10:28,246 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-30 16:10:28,247 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-30 16:10:29,148 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30 16:10:29,225 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 6 JPA repository interfaces.
+2023-06-30 16:10:29,875 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-30 16:10:29,884 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:10:29,885 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-30 16:10:29,885 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-06-30 16:10:29,992 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-30 16:10:29,993 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1745 ms
+2023-06-30 16:10:30,026 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Starting...
+2023-06-30 16:10:30,344 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Start completed.
+2023-06-30 16:10:30,355 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sncf'
+2023-06-30 16:10:30,487 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30 16:10:30,566 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-06-30 16:10:30,762 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-30 16:10:30,885 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-06-30 16:10:33,466 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30 16:10:33,481 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:10:34,088 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30 16:10:34,552 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-06-30 16:10:34,571 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-30 16:10:34,594 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-30 16:10:34,609 [restartedMain] INFO  org.example.Main - Started Main in 7.006 seconds (JVM running for 8.65)
+2023-06-30 16:10:34,819 [restartedMain] INFO  org.example.Main - Le programme a démarré.
+2023-06-30 16:11:52,171 [Thread-7] INFO  org.example.Main - le fichier à traiter 50592-Chevilly_2023.07.31_12h15m28s_Résultats-1xTint.json
+2023-06-30 16:11:52,479 [Thread-7] INFO  org.example.Main - Le fichier a été enregistré dans la base de données: 50592-Chevilly_2023.07.31_12h15m28s_Résultats-1xTint.json
+2023-06-30 16:12:07,061 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30 16:12:07,063 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown initiated...
+2023-06-30 16:12:07,068 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - sncf - Shutdown completed.

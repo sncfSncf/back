@@ -1,4 +1,0 @@
-2023-06-24 07:24:48,261 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=15h24s888ms513µs900ns).
-2023-06-24 09:46:57,025 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=2h22m9s110ms417µs300ns).
-2023-06-24 13:16:26,705 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=3h29s214ms185µs200ns).
-2023-06-24 22:16:57,773 [sncf housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - sncf - Thread starvation or clock leap detected (housekeeper delta=9h31s102ms156µs200ns).
