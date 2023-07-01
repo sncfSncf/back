@@ -107,7 +107,8 @@ import org.slf4j.LoggerFactory;
 
 
 import java.util.logging.ErrorManager;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @SpringBootApplication
@@ -169,7 +170,21 @@ public class Main {
         }
     }
 
+    private static String getYearMonthFolderName(File jsonFile) {
+        String jsonFileName = jsonFile.getName();
+        String year = ""; // Obtenir l'année à partir du nom du fichier JSON
+        String month = ""; // Obtenir le mois à partir du nom du fichier JSON
 
+        // Extraire l'année et le mois à partir du nom du fichier JSON en utilisant des expressions régulières
+        Pattern pattern = Pattern.compile(".*-(\\d{4})-(\\d{2}).*");
+        Matcher matcher = pattern.matcher(jsonFileName);
+        if (matcher.matches()) {
+            year = matcher.group(1);
+            month = matcher.group(2);
+        }
+
+        return year + File.separator + month; // Retourner le nom du dossier au format "année/mois"
+    }
 
     private void deplacerFichier(File file, File outputFolder) throws InterruptedException {
         if (file.getName().toLowerCase().endsWith(".json") || file.getName().toLowerCase().endsWith(".xlsx")) {
@@ -705,62 +720,7 @@ public class Main {
                                             }
 
 
-                                            if (sam.getStatutSAM().equals("NOK")) {
 
-                                                for (int i = 1; i <= sam.getNbOccultations().size(); i++) {
-
-                                                    enveloppeDatas.loadFromJson(samFile, i);
-
-
-// Créer un dossier avec le nom du fichier sans extension
-
-                                                    File outputFolderenvloppe = new File(outputFolder, samFile.getName().replace(".json", "") + "_enveloppes");
-
-                                                    outputFolderenvloppe.mkdir();
-
-
-// Créer le nom du fichier de sortie pour ce traitement spécifique
-
-                                                    String outputFileName = samFile.getName().replace("SAM005", "SAMCapteur" + i);
-
-                                                    String logMessageok = "Création du capteur {} => OK" + " , " + outputFileName;
-
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                                    }
-
-
-                                                    File outputFile = new File(outputFolderenvloppe, outputFileName);
-
-
-// Vérifier si le fichier de sortie existe déjà
-
-                                                    if (!outputFile.exists()) {
-
-                                                        double step = 6.0; // step peut être changé selon vos besoins
-
-                                                        enveloppeDatas.saveSampledToJson(outputFile, step);
-
-                                                    }
-
-                                                    String logMessageenv = "Création du dossier {} => OK" + ", " + outputFolderenvloppe.getName();
-
-                                                    if (isIntelliJ) {
-                                                        System.out.println(logMessageenv);  // Affiche dans la console (syso) d'IntelliJ
-                                                    } else {
-                                                        logger.info(logMessageenv);  // Affiche dans le logger du serveur
-                                                    }
-
-
-                                                    // Stocker l'URL du dossier créé
-                                                    String urlsam = outputFolderenvloppe.getPath().replaceAll("\\\\", "/");
-                                                    sam.setUrlSam(urlsam);
-
-                                                }
-
-                                            }
 
 
                                             samService.save(sam);
@@ -769,7 +729,55 @@ public class Main {
                                                 logger.info("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
                                                 System.out.println("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
                                                 deplacerFichier(samFile, outputFolder);
-                                            } else {
+                                                File targetFolder = getTargetFolder(outputFolder, samFile.getName());
+                                                String jsonFilePath = new File(targetFolder, samFile.getName()).getAbsolutePath();
+                                                String jsonFileName = sam.getFileName().substring(0, sam.getFileName().lastIndexOf('.'));
+                                                File outputFolderFile = new File(jsonFilePath).getParentFile(); // Obtenir le dossier parent du fichier JSON
+
+
+
+                                                if (sam.getStatutSAM().equals("NOK")) {
+
+                                                    File outputFolderEnvelope = new File(outputFolderFile, sam.getFileName().replace(".json", "") + "_enveloppes");
+                                                    outputFolderEnvelope.mkdir();
+                                                    String logMessa = "Création du dossier contenant les capteurs {} => OK" + " , " + outputFolderEnvelope;
+                                                    if (isIntelliJ) {
+                                                        System.out.println(logMessa);  // Affiche dans la console (syso) d'IntelliJ
+                                                    } else {
+                                                        logger.info(logMessa);  // Affiche dans le logger du serveur
+                                                    }
+
+                                                    // Mettre à jour le chemin avec le nouveau dossier créé
+                                                    String urlsam = outputFolderEnvelope.getAbsolutePath().replace("\\", "/");
+                                                    sam.setUrlSam(urlsam);
+                                                    samService.save(sam);
+
+                                                    for (int i = 1; i <= sam.getNbOccultations().size(); i++) {
+                                                        // Charger le fichier JSON depuis le nouvel emplacement
+                                                        File samFileNewLocation = new File(outputFolderFile, samFile.getName());
+
+                                                        enveloppeDatas.loadFromJson(samFileNewLocation, i);
+
+                                                        // Créer le nom du fichier de sortie pour ce traitement spécifique
+                                                        String outputFileName = samFile.getName().replace("SAM005", "SAMCapteur" + i);
+                                                        File outputFile = new File(outputFolderEnvelope, outputFileName);
+
+                                                        String logMessageok = "Création du capteur {} => OK" + " , " + outputFileName;
+                                                        if (isIntelliJ) {
+                                                            System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
+                                                        } else {
+                                                            logger.info(logMessageok);  // Affiche dans le logger du serveur
+                                                        }
+
+                                                        // Vérifier si le fichier de sortie existe déjà
+                                                        if (!outputFile.exists()) {
+                                                            double step = 6.0; // step peut être changé selon vos besoins
+                                                            enveloppeDatas.saveSampledToJson(outputFile, step);
+                                                        }
+                                                    }
+                                                }
+                                                }
+                                            else {
                                                 logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
                                                 System.out.println("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
                                             }
@@ -1473,11 +1481,51 @@ public class Main {
 
                         }
 
+//le cas ou les fichiers ont etait déposé après les fichiers json
 
+                        // Vérifier les fichiers d'images correspondants dans le dossier "input"
+                        File[] imageFiles = inputFolder.listFiles((dir, name) -> name.endsWith(".png") || name.endsWith(".bmp"));
+                        if (imageFiles != null && imageFiles.length > 0) {
+                            // Parcourir les dossiers de l'output
+                            File[] yearMonthFolders = outputFolder.listFiles(File::isDirectory);
+                            if (yearMonthFolders != null) {
+                                for (File yearMonthFolder : yearMonthFolders) {
+                                    // Extraire l'année et le mois à partir du nom du dossier
+                                    String yearMonth = yearMonthFolder.getName();
 
+                                    // Créer un filtre de noms de fichiers pour les fichiers commençant par "50592" et se terminant par ".json"
+                                    FilenameFilter jsonFilter = (dir, name) -> name.startsWith("50592") && name.endsWith(".json");
 
+                                    // Rechercher les fichiers JSON correspondant au filtre dans le dossier "yearMonthFolder"
+                                    File[] jsonFiles = yearMonthFolder.listFiles(jsonFilter);
+                                    if (jsonFiles != null) {
+                                        for (File jsonFile : jsonFiles) {
+                                            String jsonFileName = jsonFile.getName();
+                                            String jsonFileBaseName = jsonFileName.substring(0, jsonFileName.lastIndexOf('.'));
 
+                                            for (File imageFile : imageFiles) {
+                                                // Vérifier si le nom du fichier image correspondant contient le nom du fichier JSON
+                                                if (imageFile.getName().contains(jsonFileBaseName)) {
+                                                    // Créer le dossier correspondant au fichier JSON
+                                                    File jsonFolder = new File(yearMonthFolder, jsonFileBaseName);
+                                                    if (!jsonFolder.exists() && jsonFolder.mkdir()) {
+                                                        System.out.println("Dossier créé : " + jsonFolder.getAbsolutePath());
+                                                    }
 
+                                                    // Déplacer l'image dans le dossier correspondant
+                                                    File destFile = new File(jsonFolder, imageFile.getName());
+                                                    if (imageFile.renameTo(destFile)) {
+                                                        System.out.println("Image déplacée avec succès : " + imageFile.getAbsolutePath());
+                                                    } else {
+                                                        System.out.println("Échec du déplacement de l'image : " + imageFile.getAbsolutePath());
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         filesToMove.clear(); // Vider la liste filesToMove
 
 
@@ -1823,84 +1871,58 @@ public class Main {
 
                                         }
 
-
-                                        if (sam.getStatutSAM().equals("NOK")) {
-
-                                            for (int i = 1; i <= sam.getNbOccultations().size(); i++) {
-
-                                                enveloppeDatas.loadFromJson(samFile, i);
-
-
-// Créer un dossier avec le nom du fichier sans extension
-
-                                                File outputFolderenvloppe = new File(outputFolder, samFile.getName().replace(".json", "") + "_enveloppes");
-
-                                                outputFolderenvloppe.mkdir();
-
-
-// Créer le nom du fichier de sortie pour ce traitement spécifique
-
-                                                String outputFileName = samFile.getName().replace("SAM005", "SAMCapteur" + i);
-
-                                                String logMessageok = "Création du capteur {} => OK" + " , " + outputFileName;
-
-                                                if (isIntelliJ) {
-                                                    System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMessageok);  // Affiche dans le logger du serveur
-                                                }
-
-
-                                                File outputFile = new File(outputFolderenvloppe, outputFileName);
-
-
-// Vérifier si le fichier de sortie existe déjà
-
-                                                if (!outputFile.exists()) {
-
-                                                    double step = 6.0; // step peut être changé selon vos besoins
-
-                                                    enveloppeDatas.saveSampledToJson(outputFile, step);
-
-                                                }
-
-                                                String logMessageenv = "Création du dossier {} => OK" + ", " + outputFolderenvloppe.getName();
-
-                                                if (isIntelliJ) {
-                                                    System.out.println(logMessageenv);  // Affiche dans la console (syso) d'IntelliJ
-                                                } else {
-                                                    logger.info(logMessageenv);  // Affiche dans le logger du serveur
-                                                }
-
-
-                                                // Stocker l'URL du dossier créé
-                                                String urlsam = outputFolderenvloppe.getPath().replaceAll("\\\\", "/");
-                                                sam.setUrlSam(urlsam);
-
-                                            }
-
-                                        }
-
-
                                         samService.save(sam);
 
                                         if (samService.findById(sam.getId()) != null) {
                                             logger.info("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
                                             System.out.println("Le fichier a été enregistré dans la base de données: " + sam.getFileName());
-                                            //deplacement de fichier dans output
+                                            deplacerFichier(samFile, outputFolder);
                                             File targetFolder = getTargetFolder(outputFolder, samFile.getName());
-                                            File targetFileexcel = new File(targetFolder, samFile.getName());
-                                            try {
-                                                Files.move(samFile.toPath(), targetFileexcel.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                                                String logMessage = "Le fichier " + samFile.getName() + " a été déplacé vers " + targetFileexcel.getAbsolutePath();
+                                            String jsonFilePath = new File(targetFolder, samFile.getName()).getAbsolutePath();
+                                            String jsonFileName = sam.getFileName().substring(0, sam.getFileName().lastIndexOf('.'));
+                                            File outputFolderFile = new File(jsonFilePath).getParentFile(); // Obtenir le dossier parent du fichier JSON
+
+
+
+                                            if (sam.getStatutSAM().equals("NOK")) {
+
+                                                File outputFolderEnvelope = new File(outputFolderFile, sam.getFileName().replace(".json", "") + "_enveloppes");
+                                                outputFolderEnvelope.mkdir();
+                                                String logMessa = "Création du dossier contenant les capteurs {} => OK" + " , " + outputFolderEnvelope;
                                                 if (isIntelliJ) {
-                                                    System.out.println(logMessage);
+                                                    System.out.println(logMessa);  // Affiche dans la console (syso) d'IntelliJ
                                                 } else {
-                                                    logger.info(logMessage);
+                                                    logger.info(logMessa);  // Affiche dans le logger du serveur
                                                 }
-                                            } catch (IOException e) {
-                                                // Gérer l'exception en cas d'erreur de déplacement du fichier
-                                                e.printStackTrace();
+
+                                                // Mettre à jour le chemin avec le nouveau dossier créé
+                                                String urlsam = outputFolderEnvelope.getAbsolutePath().replace("\\", "/");
+                                                sam.setUrlSam(urlsam);
+                                                samService.save(sam);
+
+                                                for (int i = 1; i <= sam.getNbOccultations().size(); i++) {
+                                                    // Charger le fichier JSON depuis le nouvel emplacement
+                                                    File samFileNewLocation = new File(outputFolderFile, samFile.getName());
+
+                                                    enveloppeDatas.loadFromJson(samFileNewLocation, i);
+
+                                                    // Créer le nom du fichier de sortie pour ce traitement spécifique
+                                                    String outputFileName = samFile.getName().replace("SAM005", "SAMCapteur" + i);
+                                                    File outputFile = new File(outputFolderEnvelope, outputFileName);
+
+                                                    String logMessageok = "Création du capteur {} => OK" + " , " + outputFileName;
+                                                    if (isIntelliJ) {
+                                                        System.out.println(logMessageok);  // Affiche dans la console (syso) d'IntelliJ
+                                                    } else {
+                                                        logger.info(logMessageok);  // Affiche dans le logger du serveur
+                                                    }
+
+                                                    // Vérifier si le fichier de sortie existe déjà
+                                                    if (!outputFile.exists()) {
+                                                        double step = 6.0; // step peut être changé selon vos besoins
+                                                        enveloppeDatas.saveSampledToJson(outputFile, step);
+                                                    }
+                                                }
                                             }
                                         } else {
                                             logger.error("Erreur lors de l'enregistrement du fichier dans la base de données: " + sam.getFileName());
