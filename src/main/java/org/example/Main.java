@@ -170,24 +170,92 @@ public class Main {
         }
     }
 
-    private static String getYearMonthFolderName(File jsonFile) {
-        String jsonFileName = jsonFile.getName();
-        String year = ""; // Obtenir l'année à partir du nom du fichier JSON
-        String month = ""; // Obtenir le mois à partir du nom du fichier JSON
 
-        // Extraire l'année et le mois à partir du nom du fichier JSON en utilisant des expressions régulières
-        Pattern pattern = Pattern.compile(".*-(\\d{4})-(\\d{2}).*");
-        Matcher matcher = pattern.matcher(jsonFileName);
-        if (matcher.matches()) {
-            year = matcher.group(1);
-            month = matcher.group(2);
+    private void deplacerExcel(File file, File outputFolder) throws InterruptedException {
+        if (file.getName().toLowerCase().endsWith(".xlsx")) {
+            File targetFile = new File(outputFolder, file.getName());
+
+            if (targetFile.exists()) {
+                String logMessage = "Le fichier cible existe déjà : " + targetFile.getAbsolutePath();
+
+                if (isIntelliJ) {
+                    System.out.println(logMessage);
+                } else {
+                    logger.info(logMessage);
+                }
+            } else {
+                try {
+                    Thread.sleep(1000);
+                    Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    String logMessage = "Le fichier a été déplacé avec succès : " + file.getName();
+
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);
+                    } else {
+                        logger.info(logMessage);
+                    }
+                } catch (FileSystemException ex) {
+                    String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
+
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);
+                    } else {
+                        logger.info(logMessage);
+                    }
+
+                    int maxAttempts = 3;
+                    int attempt = 0;
+
+                    while (attempt < maxAttempts) {
+                        attempt++;
+
+                        try {
+                            Thread.sleep(1000);
+                            Files.move(file.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                            String logMessag = "Le fichier a été déplacé avec succès après une nouvelle tentative : " + file.getName();
+
+                            if (isIntelliJ) {
+                                System.out.println(logMessag);
+                            } else {
+                                logger.info(logMessag);
+                            }
+
+                            break;
+                        } catch (IOException | InterruptedException exx) {
+                            String logMessa = "Erreur lors du déplacement du fichier (tentative " + attempt + " sur " + maxAttempts + ") : " + exx.getMessage();
+
+                            if (isIntelliJ) {
+                                System.out.println(logMessa);
+                            } else {
+                                logger.info(logMessa);
+                            }
+                        }
+                    }
+
+                    if (attempt == maxAttempts) {
+                        String logMessagee = "Impossible de déplacer le fichier après " + maxAttempts + " tentatives.";
+
+                        if (isIntelliJ) {
+                            System.out.println(logMessagee);
+                        } else {
+                            logger.info(logMessagee);
+                        }
+                    }
+                } catch (IOException ex) {
+                    String logMessage = "Erreur lors du déplacement du fichier : " + ex.getMessage();
+
+                    if (isIntelliJ) {
+                        System.out.println(logMessage);
+                    } else {
+                        logger.info(logMessage);
+                    }
+                }
+            }
         }
-
-        return year + File.separator + month; // Retourner le nom du dossier au format "année/mois"
     }
 
     private void deplacerFichier(File file, File outputFolder) throws InterruptedException {
-        if (file.getName().toLowerCase().endsWith(".json") || file.getName().toLowerCase().endsWith(".xlsx")) {
+        if (file.getName().toLowerCase().endsWith(".json")) {
             String fileName = file.getName();
             File targetFolder = getTargetFolder(outputFolder, fileName);
             File targetFile = new File(targetFolder, fileName);
@@ -584,7 +652,7 @@ public class Main {
                                 }
 
                             }
-                                deplacerFichier(excelFile,outputFolder);
+                                deplacerExcel(excelFile,outputFolder);
                         }
 
 
@@ -1745,8 +1813,7 @@ public class Main {
                         }
 
                         //deplacement de fichier dans output
-                        File targetFolder = getTargetFolder(outputFolder, excelFile.getName());
-                        File targetFileexcel = new File(targetFolder, excelFile.getName());
+                        File targetFileexcel = new File(outputFolder, excelFile.getName());
                         try {
                             Files.move(excelFile.toPath(), targetFileexcel.toPath(), StandardCopyOption.REPLACE_EXISTING);
                             String logMessage = "Le fichier " + excelFile.getName() + " a été déplacé vers " + targetFileexcel.getAbsolutePath();

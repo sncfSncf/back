@@ -99,15 +99,20 @@ public class SamTrainController {
         // Récupérer le chemin du dossier de sortie à partir des propriétés
         String outputFolderPath = prop.getProperty("output.folder.path");
 
-        // Créer un objet File représentant le dossier de sortie
-        File outputFolder = new File(outputFolderPath);
-
         // Formater la date et l'heure en chaînes de caractères
+        String year = new SimpleDateFormat("yyyy").format(dateFichier);
+        String month = new SimpleDateFormat("MM").format(dateFichier);
         String dateFichierStr = new SimpleDateFormat("yyyy.MM.dd").format(dateFichier);
         String heureStr = new SimpleDateFormat("HH'h'mm'm'ss's'").format(new Date(heure.getTime()));
 
-        // Rechercher les fichiers correspondants dans le dossier de sortie
-        File[] samFiles = outputFolder.listFiles((dir, name) ->
+        // Construire le chemin complet du dossier correspondant à l'année et au mois
+        String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+        // Créer un objet File représentant le dossier correspondant à l'année et au mois
+        File targetFolder = new File(folderPath);
+
+        // Rechercher les fichiers correspondants dans le dossier cible
+        File[] samFiles = targetFolder.listFiles((dir, name) ->
                 name.startsWith("SAM005-" + site + "_" + dateFichierStr + "_" + heureStr) && name.endsWith(".json"));
 
         // Afficher un message indiquant si le tableau de fichiers est vide ou non
@@ -124,6 +129,7 @@ public class SamTrainController {
             return null;
         }
     }
+
 
 
 
@@ -267,7 +273,20 @@ public class SamTrainController {
         String outputFolderPath = prop.getProperty("output.folder.path");
 
         for (M_50592 m50592 : m50592s) {
-            File inputFile = new File(outputFolderPath, m50592.getFileName()); // utiliser le chemin du dossier de sortie comme répertoire parent
+            String fileName = m50592.getFileName();
+            // Extraire l'année et le mois du nom de fichier
+            String[] parts = fileName.split("_");
+            String[] dateParts = parts[1].split("\\.");
+            String year = dateParts[0];
+            String month = dateParts[1];
+
+            // Construire le chemin complet du dossier correspondant à l'année et au mois
+            String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+            // Créer un objet File représentant le dossier correspondant à l'année et au mois
+            File inputFile = new File(folderPath,m50592.getFileName());
+
+            // Rechercher le fichier 50592 dans le dossier cible
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // lire depuis le fichier d'entrée
             JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -306,7 +325,18 @@ public class SamTrainController {
         String outputFolderPath = prop.getProperty("output.folder.path");
 
         for (M_50592 m50592 : m50592s) {
-            File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+            String fileName = m50592.getFileName();
+            // Extraire l'année et le mois du nom de fichier
+            String[] parts = fileName.split("_");
+            String[] dateParts = parts[1].split("\\.");
+            String year = dateParts[0];
+            String month = dateParts[1];
+
+            // Construire le chemin complet du dossier correspondant à l'année et au mois
+            String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+            // Créer un objet File représentant le dossier correspondant à l'année et au mois
+            File inputFile = new File(folderPath,m50592.getFileName());
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
             JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -314,7 +344,7 @@ public class SamTrainController {
                 JsonNode entete = parametreBENode.get(i).get(0);
                 String enteteText = entete.asText();
                 if (!entetesDejaAjoutes.contains(enteteText)) { // vérifier si l'entête n'a pas déjà été ajoutée
-                    if (!(enteteText.equals("D39") || enteteText.equals("D50"))) { // vérifier si l'entête ne commence pas par D39 ou D50
+                    if (!(enteteText.startsWith("D39") || enteteText.startsWith("D50"))) { // vérifier si l'entête ne commence pas par D39 ou D50
                         capteurs.add(enteteText);
                         entetesDejaAjoutes.add(enteteText); // ajouter l'entête à l'ensemble temporaire
                     }
@@ -628,7 +658,18 @@ public class SamTrainController {
                         prop.load(input);
 
                         String outputFolderPath = prop.getProperty("output.folder.path");
-                        File inputFile = new File(outputFolderPath, m50592.getFileName());
+                        String fileName = m50592.getFileName();
+                        // Extraire l'année et le mois du nom de fichier
+                        String[] parts = fileName.split("_");
+                        String[] dateParts = parts[1].split("\\.");
+                        String year = dateParts[0];
+                        String month = dateParts[1];
+
+                        // Construire le chemin complet du dossier correspondant à l'année et au mois
+                        String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                        // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                        File inputFile = new File(folderPath,m50592.getFileName());
 
                         ObjectMapper mapper = new ObjectMapper();
                         JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -637,7 +678,7 @@ public class SamTrainController {
                         JsonNode outofband = rootNode.get("OutOfBand");
                         JsonNode fondoutofband = rootNode.get("OutOfBand_Fond");
 
-                        List<Object> enteteshb = new ArrayList<>();
+
                         List<Object> entetesbl = new ArrayList<>();
                         List<Object> frequencesbl = new ArrayList<>();
                         List<Object> entetesbe = new ArrayList<>();
@@ -702,6 +743,7 @@ public class SamTrainController {
 
 
 
+
 // Traiter les cas où sam n'est pas égal à train
         for (Sam sam : sams) {
 
@@ -729,7 +771,7 @@ public class SamTrainController {
             boolean foundTrain = false;
             boolean found50592 = false;
             for (Train train : trains) {
-                if (isBetweenTime(train.getHeureFichier(), sam.getHeureFichier(),sam.getHeureFichier()) &&
+                if (isBetweenTime(train.getHeureFichier(), sam.getHeureFichier(),train.getHeureFichier()) &&
                         train.getDateFichier().equals(sam.getDateFichier())) {
                     foundTrain = true;
 
@@ -762,7 +804,18 @@ public class SamTrainController {
                     prop.load(input);
 
                     String outputFolderPath = prop.getProperty("output.folder.path");
-                    File inputFile = new File(outputFolderPath, m50592.getFileName());
+                    String fileName = m50592.getFileName();
+                    // Extraire l'année et le mois du nom de fichier
+                    String[] parts = fileName.split("_");
+                    String[] dateParts = parts[1].split("\\.");
+                    String year = dateParts[0];
+                    String month = dateParts[1];
+
+                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                    File inputFile = new File(folderPath,m50592.getFileName());
 
                     ObjectMapper mapper = new ObjectMapper();
                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -803,7 +856,7 @@ public class SamTrainController {
 
 
                     found50592 = true;
-                    break;
+
                 }
             }
 
@@ -881,7 +934,18 @@ public class SamTrainController {
             prop.load(input);
 
             String outputFolderPath = prop.getProperty("output.folder.path");
-            File inputFile = new File(outputFolderPath, m50592.getFileName());
+            String fileName = m50592.getFileName();
+            // Extraire l'année et le mois du nom de fichier
+            String[] parts = fileName.split("_");
+            String[] dateParts = parts[1].split("\\.");
+            String year = dateParts[0];
+            String month = dateParts[1];
+
+            // Construire le chemin complet du dossier correspondant à l'année et au mois
+            String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+            // Créer un objet File représentant le dossier correspondant à l'année et au mois
+            File inputFile = new File(folderPath,m50592.getFileName());
 
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -1107,7 +1171,18 @@ public ResponseEntity<List<Map<String, Object>>> getBySiteAndDateFichierBetween(
                         prop.load(input);
 
                         String outputFolderPath = prop.getProperty("output.folder.path");
-                        File inputFile = new File(outputFolderPath, m50592.getFileName());
+                        String fileName = m50592.getFileName();
+                        // Extraire l'année et le mois du nom de fichier
+                        String[] parts = fileName.split("_");
+                        String[] dateParts = parts[1].split("\\.");
+                        String year = dateParts[0];
+                        String month = dateParts[1];
+
+                        // Construire le chemin complet du dossier correspondant à l'année et au mois
+                        String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                        // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                        File inputFile = new File(folderPath,m50592.getFileName());
 
                         ObjectMapper mapper = new ObjectMapper();
                         JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -1240,7 +1315,18 @@ public ResponseEntity<List<Map<String, Object>>> getBySiteAndDateFichierBetween(
                     prop.load(input);
 
                     String outputFolderPath = prop.getProperty("output.folder.path");
-                    File inputFile = new File(outputFolderPath, m50592.getFileName());
+                    String fileName = m50592.getFileName();
+                    // Extraire l'année et le mois du nom de fichier
+                    String[] parts = fileName.split("_");
+                    String[] dateParts = parts[1].split("\\.");
+                    String year = dateParts[0];
+                    String month = dateParts[1];
+
+                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                    File inputFile = new File(folderPath,m50592.getFileName());
 
                     ObjectMapper mapper = new ObjectMapper();
                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -1281,7 +1367,7 @@ public ResponseEntity<List<Map<String, Object>>> getBySiteAndDateFichierBetween(
 
 
                     found50592 = true;
-                    break;
+
                 }
             }
 
@@ -1359,7 +1445,18 @@ public ResponseEntity<List<Map<String, Object>>> getBySiteAndDateFichierBetween(
                 prop.load(input);
 
                 String outputFolderPath = prop.getProperty("output.folder.path");
-                File inputFile = new File(outputFolderPath, m50592.getFileName());
+                String fileName = m50592.getFileName();
+                // Extraire l'année et le mois du nom de fichier
+                String[] parts = fileName.split("_");
+                String[] dateParts = parts[1].split("\\.");
+                String year = dateParts[0];
+                String month = dateParts[1];
+
+                // Construire le chemin complet du dossier correspondant à l'année et au mois
+                String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                File inputFile = new File(folderPath,m50592.getFileName());
 
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
@@ -1555,7 +1652,18 @@ foundTrain =true;
 
                     String outputFolderPath = prop.getProperty("output.folder.path");
 
-                    File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+                    String fileName = m50592.getFileName();
+                    // Extraire l'année et le mois du nom de fichier
+                    String[] parts = fileName.split("_");
+                    String[] dateParts = parts[1].split("\\.");
+                    String year = dateParts[0];
+                    String month = dateParts[1];
+
+                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                    File inputFile = new File(folderPath,m50592.getFileName());
                     ObjectMapper mapper = new ObjectMapper();
                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class);
                     // read from input file
@@ -1641,11 +1749,11 @@ foundTrain =true;
 
                                 // Vérifier le dépassement pour chaque axe
                                 double depassementX = getDepassement(limitesX);
-                                System.out.println(limitesX);
+
                                 double depassementY = getDepassement(limitesY);
-                                System.out.println(limitesY);
+
                                 double depassementZ = getDepassement(limitesZ);
-                                System.out.println(limitesZ);
+
 
                                 // Vérifier si les dépassements sont vides pour chaque axe et définir une valeur par défaut
                                 if (limitesX.isEmpty()) {
@@ -2326,16 +2434,17 @@ foundTrain =true;
         List<String> Trains50592nok = new ArrayList<>();
         boolean foundmr = false ;
         List<Map<String, Object>> result = new ArrayList<>();
-
         if(typemrList != null && !typemrList.isEmpty() ) {
-            Collections.sort(typemrList);
+
             for (String typemr : typemrList) {
                 foundmr = true;
                 List<Mr> mrs = mrRepository.findByMr(typemr);
 
+                Map<String, Object> traintypemr = new HashMap<>();
 
 // Déclarer un compteur pour le nombre d'occurrences de resultatR1 > 0
                 for (Mr mr : mrs) {
+
                     List<Train> trains = trainRepository.findBySiteAndDateFichierBetween(site, start, end);
                     for (Train train : trains) {
                         Long trainId = train.getId(); // Récupérer l'id du train
@@ -2344,7 +2453,7 @@ foundTrain =true;
                         for (Result results : resultss) {
 
                             numTrains.add(results.getEngine());
-                            System.out.println("size trains "+numTrains.size());
+
 
                             boolean samFound = false; // Variable pour indiquer si un sam correspondant a été trouvé
 
@@ -2427,7 +2536,18 @@ foundTrain =true;
 
                                     String outputFolderPath = prop.getProperty("output.folder.path");
 
-                                    File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+                                    String fileName = m50592.getFileName();
+                                    // Extraire l'année et le mois du nom de fichier
+                                    String[] parts = fileName.split("_");
+                                    String[] dateParts = parts[1].split("\\.");
+                                    String year = dateParts[0];
+                                    String month = dateParts[1];
+
+                                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                                    File inputFile = new File(folderPath,m50592.getFileName());
                                     ObjectMapper mapper = new ObjectMapper();
                                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                                     JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -2484,7 +2604,18 @@ foundTrain =true;
 
                                         String outputFolderPath = prop.getProperty("output.folder.path");
 
-                                        File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+                                        String fileName = m50592.getFileName();
+                                        // Extraire l'année et le mois du nom de fichier
+                                        String[] parts = fileName.split("_");
+                                        String[] dateParts = parts[1].split("\\.");
+                                        String year = dateParts[0];
+                                        String month = dateParts[1];
+
+                                        // Construire le chemin complet du dossier correspondant à l'année et au mois
+                                        String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                                        // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                                        File inputFile = new File(folderPath,m50592.getFileName());
                                         ObjectMapper mapper = new ObjectMapper();
                                         JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                                         JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -2532,9 +2663,21 @@ foundTrain =true;
                     }
 
 
+
+                    int trainCount = trainRepository.countBySiteAndDateFichierBetween(site, start, end);
+                    double pourcentagemr = ((double) (numTrains.size()) / trainCount) * 100;
+                    Double pourcentageFormattedmr = Math.round(pourcentagemr * 100.0) / 100.0;
+
+                    traintypemr.put("Type MR", typemr);
+                    traintypemr.put("Nombre de trains avec ce type MR", numTrains.size());
+                    traintypemr.put("Nombre de trains passé", trainCount);
+                    traintypemr.put("Pourcentage", pourcentageFormattedmr);
                 }
+
+
                 Map<String, Object> trainMapSam = new HashMap<>();
                 Map<String, Object> trainMap50592 = new HashMap<>();
+
 
 
                 int countsamok = Trainssamok.size();
@@ -2644,6 +2787,9 @@ foundTrain =true;
                 if (!trainMap50592.isEmpty()) {
                     result.add(trainMap50592);
                 }
+                if(!traintypemr.isEmpty()){
+                    result.add(traintypemr);
+                }
 
             }
 
@@ -2745,7 +2891,18 @@ foundTrain =true;
 
                     String outputFolderPath = prop.getProperty("output.folder.path");
 
-                    File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+                String fileName = m50592.getFileName();
+                // Extraire l'année et le mois du nom de fichier
+                String[] parts = fileName.split("_");
+                String[] dateParts = parts[1].split("\\.");
+                String year = dateParts[0];
+                String month = dateParts[1];
+
+                // Construire le chemin complet du dossier correspondant à l'année et au mois
+                String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                File inputFile = new File(folderPath,m50592.getFileName());
                     ObjectMapper mapper = new ObjectMapper();
                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                     JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -2801,7 +2958,18 @@ foundTrain =true;
 
                         String outputFolderPath = prop.getProperty("output.folder.path");
 
-                        File inputFile = new File(outputFolderPath, m50592.getFileName()); // use output folder path as parent directory
+                    String fileName = m50592.getFileName();
+                    // Extraire l'année et le mois du nom de fichier
+                    String[] parts = fileName.split("_");
+                    String[] dateParts = parts[1].split("\\.");
+                    String year = dateParts[0];
+                    String month = dateParts[1];
+
+                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                    File inputFile = new File(folderPath,m50592.getFileName());
                         ObjectMapper mapper = new ObjectMapper();
                         JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                         JsonNode parametreBENode = rootNode.get("ParametresBE");
