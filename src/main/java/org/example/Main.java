@@ -686,15 +686,58 @@ public class Main {
                         EnvloppeData enveloppeDatas = new EnvloppeData();
 
 // Lire tous les fichiers commençant par 'Sam'
-
-                        File[] samFiless = inputFolder.listFiles((dir, name) -> name.startsWith("SAM005") && name.endsWith(".json"));
+                        String regex = "50592-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s_Résultats-1xTint\\.json";
                         String regex1 = "SAM005-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s\\.json";
+
+
+
+
+                        if (inputFolder.exists() && inputFolder.isDirectory()) {
+                            File[] files = inputFolder.listFiles();
+
+                            if (files != null) {
+                                for (File file : files) {
+                                    String fileName = file.getName();
+                                    if (!Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
+                                        // Le nom de fichier ne correspond pas aux formats spécifiés par regex et regex1, le déplacer dans "echec"
+                                        File targetFile = new File(echecFolderPath, fileName);
+
+                                        try {
+                                            String logMessage = "Le nom de fichier " + file.getName() + " ne correspond pas au format spécifié ";
+
+                                            Path sourcePath = file.toPath();
+                                            Path targetPath = targetFile.toPath();
+
+                                            Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+                                            String logMessageerreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec "+targetFile.getAbsolutePath()+" est OK";
+                                            if (isIntelliJ) {
+                                                System.out.println(logMessage);
+                                                System.out.println(logMessageerreur);// Affiche dans la console (syso) d'IntelliJ
+                                            } else {
+                                                logger.info(logMessage);  // Affiche dans le logger du serveur
+                                                logger.info(logMessageerreur);
+                                            }
+                                        } catch (IOException e) {
+                                            String logMessage = "Erreur lors du déplacement du fichier vers le dossier 'echec' : " + e.getMessage();
+
+                                            if (isIntelliJ) {
+                                                System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                                            } else {
+                                                logger.info(logMessage);  // Affiche dans le logger du serveur
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        File[] samFiless = inputFolder.listFiles((dir, name) -> name.startsWith("SAM005") && name.endsWith(".json"));
+
 
 
                         if (samFiless != null ) {
 
                             for (File samFile : samFiless) {
-                                if (!samFile.getName().matches(regex1)) {
+                                if (!Pattern.matches(regex1, samFile.getName())) {
                                     // Le nom de fichier ne correspond pas au format spécifié
                                     File targetFileechec = new File(echecFolderPath, samFile.getName());
                                     try {
@@ -1087,7 +1130,6 @@ public class Main {
 // Lire tous les fichiers commençant par '50592'
 
                         File[] m50592Filess = inputFolder.listFiles((dir, name) -> name.startsWith("50592") && name.endsWith(".json"));
-                        String regex = "50592-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s_Résultats-1xTint\\.json";
 
 
                         if (m50592Filess != null) {
@@ -1835,11 +1877,54 @@ public class Main {
 
 
                 EnvloppeData enveloppeDatas = new EnvloppeData();
+                String regex = "50592-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s_Résultats-1xTint\\.json";
+                String regex1 = "SAM005-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s\\.json";
 
+
+
+
+                if (inputFolder.exists() && inputFolder.isDirectory()) {
+                    File[] files = inputFolder.listFiles();
+
+                    if (files != null) {
+                        for (File file : files) {
+                            String fileName = file.getName();
+                            if (!Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
+                                // Le nom de fichier ne correspond pas aux formats spécifiés par regex et regex1, le déplacer dans "echec"
+                                File targetFile = new File(echecFolderPath, fileName);
+
+                                try {
+                                    String logMessage = "Le nom de fichier " + file.getName() + " ne correspond pas au format spécifié ";
+
+                                    Path sourcePath = file.toPath();
+                                    Path targetPath = targetFile.toPath();
+
+                                    Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+                                    String logMessageerreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec "+targetFile.getAbsolutePath()+" est OK";
+                                    if (isIntelliJ) {
+                                        System.out.println(logMessage);
+                                        System.out.println(logMessageerreur);// Affiche dans la console (syso) d'IntelliJ
+                                    } else {
+                                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                                        logger.info(logMessageerreur);
+                                    }
+                                } catch (IOException e) {
+                                    String logMessage = "Erreur lors du déplacement du fichier vers le dossier 'echec' : " + e.getMessage();
+
+                                    if (isIntelliJ) {
+                                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
+                                    } else {
+                                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 // Lire tous les fichiers commençant par 'Sam'
 
                 File[] samFiless = inputFolder.listFiles((dir, name) -> name.startsWith("SAM005") && name.endsWith(".json"));
-                String regex1 = "SAM005-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s.json";
+
                 if (samFiless != null ) {
 
                     for (File samFile : samFiless) {
@@ -2230,7 +2315,7 @@ public class Main {
 // Lire tous les fichiers commençant par '50592'
 
                 File[] m50592Filess = inputFolder.listFiles((dir, name) -> name.startsWith("50592") && name.endsWith(".json"));
-                String regex = "50592-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s_Résultats-1xTint\\.json";
+
 
                 if (m50592Filess != null) {
 

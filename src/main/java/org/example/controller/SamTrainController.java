@@ -3415,6 +3415,7 @@ if(!totalPourcentageMap50592nok.isEmpty()){
                 // Créez le chemin d'accès complet en combinant le répertoire de base et le nom de fichier
                 Path filePath = Paths.get(outputFolderPath, fileName);
 
+
                 // Enregistrez le fichier dans le répertoire spécifié
                 Files.write(filePath, file.getBytes());
 
