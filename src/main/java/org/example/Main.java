@@ -558,6 +558,7 @@ public class Main {
                                         }
                                     }
                                 } else {
+
                                 File targetFile = new File(outputFolder, excelFile.getName());
 
                                 if (targetFile.exists()) {
@@ -690,46 +691,37 @@ public class Main {
                         String regex1 = "SAM005-.+_\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}h\\d{2}m\\d{2}s\\.json";
 
 
-
-
                         if (inputFolder.exists() && inputFolder.isDirectory()) {
                             File[] files = inputFolder.listFiles();
 
                             if (files != null) {
                                 for (File file : files) {
                                     String fileName = file.getName();
-                                    if (!Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
+                                    if (file.isFile() && (fileName.endsWith(".json") || fileName.endsWith(".JSON")) &&
+                                            !Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
                                         // Le nom de fichier ne correspond pas aux formats spécifiés par regex et regex1, le déplacer dans "echec"
                                         File targetFile = new File(echecFolderPath, fileName);
 
-                                        try {
                                             String logMessage = "Le nom de fichier " + file.getName() + " ne correspond pas au format spécifié ";
 
                                             Path sourcePath = file.toPath();
                                             Path targetPath = targetFile.toPath();
 
                                             Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-                                            String logMessageerreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec "+targetFile.getAbsolutePath()+" est OK";
+                                            String logMessageErreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec " + targetFile.getAbsolutePath() + " est OK";
                                             if (isIntelliJ) {
                                                 System.out.println(logMessage);
-                                                System.out.println(logMessageerreur);// Affiche dans la console (syso) d'IntelliJ
+                                                System.out.println(logMessageErreur); // Affiche dans la console (syso) d'IntelliJ
                                             } else {
-                                                logger.info(logMessage);  // Affiche dans le logger du serveur
-                                                logger.info(logMessageerreur);
+                                                logger.info(logMessage); // Affiche dans le logger du serveur
+                                                logger.info(logMessageErreur);
                                             }
-                                        } catch (IOException e) {
-                                            String logMessage = "Erreur lors du déplacement du fichier vers le dossier 'echec' : " + e.getMessage();
 
-                                            if (isIntelliJ) {
-                                                System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
-                                            } else {
-                                                logger.info(logMessage);  // Affiche dans le logger du serveur
-                                            }
-                                        }
                                     }
                                 }
                             }
                         }
+
                         File[] samFiless = inputFolder.listFiles((dir, name) -> name.startsWith("SAM005") && name.endsWith(".json"));
 
 
@@ -762,7 +754,20 @@ public class Main {
                                         }
                                     }
                                 } else {
-                                File targetFile = new File(outputFolder, samFile.getName());
+                                    String fileName = samFile.getName();
+                                    // Extraire l'année et le mois du nom de fichier
+                                    String[] partss = fileName.split("_");
+                                    String[] dateParts = partss[1].split("\\.");
+                                    String year = dateParts[0];
+                                    String month = dateParts[1];
+
+                                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                                    File targetFile = new File(folderPath, samFile.getName());
+
+
 
                                 if (targetFile.exists()) {
                                     File targetFileechec = new File(echecFolderPath, samFile.getName());
@@ -1159,7 +1164,19 @@ public class Main {
                                         }
                                     }
                                 } else {
-                                    File targetFile = new File(outputFolder, m50592File.getName());
+                                    String fileName = m50592File.getName();
+                                    // Extraire l'année et le mois du nom de fichier
+                                    String[] partss = fileName.split("_");
+                                    String[] dateParts = partss[1].split("\\.");
+                                    String year = dateParts[0];
+                                    String month = dateParts[1];
+
+                                    // Construire le chemin complet du dossier correspondant à l'année et au mois
+                                    String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                                    // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                                    File targetFile = new File(folderPath, m50592File.getName());
+
 
                                     if (targetFile.exists()) {
                                         File targetFileechec = new File(echecFolderPath, m50592File.getName());
@@ -1889,38 +1906,32 @@ public class Main {
                     if (files != null) {
                         for (File file : files) {
                             String fileName = file.getName();
-                            if (!Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
+                            if (file.isFile() && (fileName.endsWith(".json") || fileName.endsWith(".JSON")) &&
+                                    !Pattern.matches(regex, fileName) && !Pattern.matches(regex1, fileName)) {
                                 // Le nom de fichier ne correspond pas aux formats spécifiés par regex et regex1, le déplacer dans "echec"
                                 File targetFile = new File(echecFolderPath, fileName);
 
-                                try {
+
                                     String logMessage = "Le nom de fichier " + file.getName() + " ne correspond pas au format spécifié ";
 
                                     Path sourcePath = file.toPath();
                                     Path targetPath = targetFile.toPath();
 
                                     Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-                                    String logMessageerreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec "+targetFile.getAbsolutePath()+" est OK";
+                                    String logMessageErreur = "Le déplacement du fichier " + file.getName() + " dans le répertoire d'echec " + targetFile.getAbsolutePath() + " est OK";
                                     if (isIntelliJ) {
                                         System.out.println(logMessage);
-                                        System.out.println(logMessageerreur);// Affiche dans la console (syso) d'IntelliJ
+                                        System.out.println(logMessageErreur); // Affiche dans la console (syso) d'IntelliJ
                                     } else {
-                                        logger.info(logMessage);  // Affiche dans le logger du serveur
-                                        logger.info(logMessageerreur);
-                                    }
-                                } catch (IOException e) {
-                                    String logMessage = "Erreur lors du déplacement du fichier vers le dossier 'echec' : " + e.getMessage();
-
-                                    if (isIntelliJ) {
-                                        System.out.println(logMessage);  // Affiche dans la console (syso) d'IntelliJ
-                                    } else {
-                                        logger.info(logMessage);  // Affiche dans le logger du serveur
+                                        logger.info(logMessage); // Affiche dans le logger du serveur
+                                        logger.info(logMessageErreur);
                                     }
                                 }
-                            }
+
                         }
                     }
                 }
+
 // Lire tous les fichiers commençant par 'Sam'
 
                 File[] samFiless = inputFolder.listFiles((dir, name) -> name.startsWith("SAM005") && name.endsWith(".json"));
@@ -1954,7 +1965,18 @@ public class Main {
                                 }
                             }
                         } else {
-                            File targetFile = new File(outputFolder, samFile.getName());
+                            String fileName = samFile.getName();
+                            // Extraire l'année et le mois du nom de fichier
+                            String[] partss = fileName.split("_");
+                            String[] dateParts = partss[1].split("\\.");
+                            String year = dateParts[0];
+                            String month = dateParts[1];
+
+                            // Construire le chemin complet du dossier correspondant à l'année et au mois
+                            String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                            // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                            File targetFile = new File(folderPath, samFile.getName());
 
                             if (targetFile.exists()) {
                                 File targetFileechec = new File(echecFolderPath, samFile.getName());
@@ -2347,9 +2369,21 @@ public class Main {
                         } else {
                             // Le nom de fichier correspond au format spécifié
 
-                        File targetFile = new File(outputFolder, m50592File.getName());
+                            String fileName = m50592File.getName();
+                            // Extraire l'année et le mois du nom de fichier
+                            String[] partss = fileName.split("_");
+                            String[] dateParts = partss[1].split("\\.");
+                            String year = dateParts[0];
+                            String month = dateParts[1];
 
-                        if (targetFile.exists()) {
+                            // Construire le chemin complet du dossier correspondant à l'année et au mois
+                            String folderPath = outputFolderPath + File.separator + year + "-" + month;
+
+                            // Créer un objet File représentant le dossier correspondant à l'année et au mois
+                            File targetFile = new File(folderPath, m50592File.getName());
+
+
+                            if (targetFile.exists()) {
                             File targetFileechec = new File(echecFolderPath, m50592File.getName());
                             try {
                                 String logMessage = "Le fichier cible existe déjà : " + targetFileechec.getAbsolutePath();
