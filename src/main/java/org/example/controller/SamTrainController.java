@@ -2444,7 +2444,7 @@ foundTrain =true;
 
 // Déclarer un compteur pour le nombre d'occurrences de resultatR1 > 0
                 for (Mr mr : mrs) {
-
+if(typemr.equals(mr.getMr())){
                     List<Train> trains = trainRepository.findBySiteAndDateFichierBetween(site, start, end);
                     for (Train train : trains) {
                         Long trainId = train.getId(); // Récupérer l'id du train
@@ -2459,7 +2459,7 @@ foundTrain =true;
 
                             boolean allSamsOk = true;
                             for (Sam sam : sams) {
-                                if (isBetweenTime(train.getHeureFichier(), sam.getHeureFichier(),sam.getHeureFichier())
+                                if (isBetweenTime(train.getHeureFichier(), sam.getHeureFichier(), sam.getHeureFichier())
                                         && train.getDateFichier().equals(sam.getDateFichier())) {
 
                                     samFound = true; // Un sam correspondant a été trouvé
@@ -2480,7 +2480,8 @@ foundTrain =true;
                                         }
 
 
-                                    }  if( sam.getStatutSAM().equals("OK") && statutSam.equals("OK")){
+                                    }
+                                    if (sam.getStatutSAM().equals("OK") && statutSam.equals("OK")) {
                                         Trainssamok.add(sam.getFileName());
 
                                     }
@@ -2488,7 +2489,7 @@ foundTrain =true;
                             }
                             if (statutSam != null && !statutSam.isEmpty() && statutSam.equals("uniquement sam") && !statutSam.equals("OK") && !statutSam.equals("NOK")) {
                                 for (Sam sam1 : samuniquement) {
-                                    if (isBetweenTime(train.getHeureFichier(), sam1.getHeureFichier(),sam1.getHeureFichier())
+                                    if (isBetweenTime(train.getHeureFichier(), sam1.getHeureFichier(), sam1.getHeureFichier())
                                             && train.getDateFichier().equals(sam1.getDateFichier())) {
 
                                         if (!sam1.getStatutSAM().equals("OK")) {
@@ -2509,13 +2510,10 @@ foundTrain =true;
 
                                             allSamsOk = false;
                                             break;
-                                        }else{
+                                        } else {
                                             Trainssamok.add(results.getEngine());
 
                                         }
-
-
-
 
 
                                     }
@@ -2527,7 +2525,7 @@ foundTrain =true;
 
 
                             for (M_50592 m50592 : m50592s) {
-                                if (isBetweenTime(train.getHeureFichier(), m50592.getHeureFichier(),m50592.getHeureFichier())
+                                if (isBetweenTime(train.getHeureFichier(), m50592.getHeureFichier(), m50592.getHeureFichier())
                                         && train.getDateFichier().equals(m50592.getDateFichier())) {
 
                                     Properties prop = new Properties();
@@ -2547,7 +2545,7 @@ foundTrain =true;
                                     String folderPath = outputFolderPath + File.separator + year + "-" + month;
 
                                     // Créer un objet File représentant le dossier correspondant à l'année et au mois
-                                    File inputFile = new File(folderPath,m50592.getFileName());
+                                    File inputFile = new File(folderPath, m50592.getFileName());
                                     ObjectMapper mapper = new ObjectMapper();
                                     JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                                     JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -2594,7 +2592,7 @@ foundTrain =true;
                             if (statut50592 != null && !statut50592.isEmpty() && statut50592.equals("uniquement 50592")) {
                                 for (M_50592 m50592 : m50592s1) {
 
-                                    if (isBetweenTime(train.getHeureFichier(), m50592.getHeureFichier(),m50592.getHeureFichier())
+                                    if (isBetweenTime(train.getHeureFichier(), m50592.getHeureFichier(), m50592.getHeureFichier())
                                             && train.getDateFichier().equals(m50592.getDateFichier())) {
 
 
@@ -2615,7 +2613,7 @@ foundTrain =true;
                                         String folderPath = outputFolderPath + File.separator + year + "-" + month;
 
                                         // Créer un objet File représentant le dossier correspondant à l'année et au mois
-                                        File inputFile = new File(folderPath,m50592.getFileName());
+                                        File inputFile = new File(folderPath, m50592.getFileName());
                                         ObjectMapper mapper = new ObjectMapper();
                                         JsonNode rootNode = mapper.readValue(inputFile, JsonNode.class); // read from input file
                                         JsonNode parametreBENode = rootNode.get("ParametresBE");
@@ -2663,7 +2661,6 @@ foundTrain =true;
                     }
 
 
-
                     int trainCount = trainRepository.countBySiteAndDateFichierBetween(site, start, end);
                     double pourcentagemr = ((double) (numTrains.size()) / trainCount) * 100;
                     Double pourcentageFormattedmr = Math.round(pourcentagemr * 100.0) / 100.0;
@@ -2674,7 +2671,7 @@ foundTrain =true;
                     traintypemr.put("Pourcentage", pourcentageFormattedmr);
                 }
 
-
+            }
                 Map<String, Object> trainMapSam = new HashMap<>();
                 Map<String, Object> trainMap50592 = new HashMap<>();
 
